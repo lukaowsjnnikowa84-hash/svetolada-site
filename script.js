@@ -17,7 +17,13 @@ document.getElementById("reportForm").addEventListener("submit", async function(
         const result = await response.json();
 
         if (result.file_url) {
-            window.location.href = `result.html?file=${encodeURIComponent(result.file_url)}`;
+            // добавляем новый документ в список
+            const list = document.getElementById("documents-list");
+            const newItem = document.createElement("li");
+            newItem.innerHTML = `<a href="${result.file_url}" target="_blank">${data.title}</a>`;
+            list.appendChild(newItem);
+
+            status.textContent = "Отчёт успешно создан!";
         } else {
             status.textContent = "Ошибка: сервер не вернул ссылку на файл.";
         }

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Документы Светолада</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- форма для генерации отчёта -->
+  <form id="reportForm">
+    <input type="text" name="title" placeholder="Название отчёта" required>
+    <button type="submit">Создать отчёт</button>
+    <p id="status"></p>
+  </form>
+
+  <!-- раздел Документы -->
+  <section id="documents">
+    <h2 class="documents-title">Документы</h2>
+    <div class="documents-block">
+      <p class="documents-slogan">Документы Светолады — надёжные знания в красивой форме</p>
+      <p>Здесь вы можете скачать наши материалы:</p>
+      <ul id="documents-list">
+        <li><a href="report1.pdf" target="_blank">Отчёт №1</a></li>
+        <li><a href="report2.pdf" target="_blank">Отчёт №2</a></li>
+        <li><a href="report3.pdf" target="_blank">Отчёт №3</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
