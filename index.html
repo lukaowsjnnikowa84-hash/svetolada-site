@@ -8,12 +8,79 @@
   <link rel="icon" href="icon.png" type="image/png">
   <link rel="apple-touch-icon" href="icon.png">
 
-  <!-- Иконка для телефона (ярлык на главный экран) -->
-  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Стили -->
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background: radial-gradient(circle at 50% 50%, #0b0c10 0%, #000000 100%);
+      overflow: hidden;
+      color: #f7f2e9;
+      text-align: center;
+    }
+
+    /* Сияющий заголовок */
+    h1 {
+      margin-top: 50px;
+      color: #ffd700;
+      text-shadow: 0 0 10px #ffd700,
+                   0 0 20px #ffec8b,
+                   0 0 30px #fffacd;
+      animation: glow 3s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px #ffd700,
+                     0 0 20px #ffec8b,
+                     0 0 30px #fffacd;
+      }
+      to {
+        text-shadow: 0 0 20px #ffd700,
+                     0 0 40px #ffec8b,
+                     0 0 60px #fffacd;
+      }
+    }
+
+    /* Светящаяся кнопка */
+    a {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 24px;
+      background: #4a90e2;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #4a90e2, 0 0 20px #4a90e2;
+      transition: 0.3s;
+    }
+    a:hover {
+      background: #357ab8;
+      box-shadow: 0 0 20px #4a90e2, 0 0 40px #4a90e2;
+    }
+
+    /* Движущиеся звёзды */
+    .stars {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 200%;
+      height: 200%;
+      background: url("background.jpg") repeat;
+      background-size: cover;
+      animation: moveStars 60s linear infinite;
+      z-index: -1;
+    }
+
+    @keyframes moveStars {
+      from { transform: translate(0, 0); }
+      to { transform: translate(-50%, -50%); }
+    }
+  </style>
 </head>
 <body>
-  <!-- твой контент -->
+  <div class="stars"></div>
+  <h1>Добро пожаловать в Светоладу ✨</h1>
+  <a href="#">Создать персональный отчёт</a>
 </body>
 </html>
-
-
