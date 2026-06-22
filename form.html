@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Создание отчёта — Светолада</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+    <h2 class="title">Создание персонального отчёта</h2>
+
+    <form id="reportForm">
+        <label>Имя</label>
+        <input type="text" name="name" required>
+
+        <label>Дата рождения</label>
+        <input type="date" name="birthdate" required>
+
+        <label>Пол</label>
+        <select name="gender" required>
+            <option value="female">Женский</option>
+            <option value="male">Мужской</option>
+        </select>
+
+        <button type="submit" class="button">Создать отчёт</button>
+    </form>
+
+    <p id="status"></p>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+
