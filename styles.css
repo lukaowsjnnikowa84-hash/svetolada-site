@@ -1,9 +1,130 @@
-.documents-title {
+/* Общий фон */
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: radial-gradient(circle at 50% 50%, #0b0c10 0%, #000000 100%);
+  color: #f7f2e9;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+/* Звёзды */
+.stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background: url("background.png") repeat;
+  background-size: cover;
+  animation: moveStars 60s linear infinite;
+  z-index: -1;
+}
+
+@keyframes moveStars {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* Логотип */
+img.logo {
+  width: 120px;
+  margin-top: 30px;
+  filter: drop-shadow(0 0 12px #ffd700);
+}
+
+/* Обычное меню (ПК) */
+nav.menu a {
   color: #ffd700;
-  text-shadow:
-    0 0 8px #ffd700,
-    0 0 15px #ffec8b;
-  margin-bottom: 20px;
-  opacity: 0;
-  animation: fadeIn 1.5s forwards; /* плавное появление */
+  margin: 0 15px;
+  text-decoration: none;
+  font-size: 22px;
+  text-shadow: 0 0 8px #ffd700;
+}
+
+/* Бургер */
+.burger {
+  display: none;
+  font-size: 32px;
+  color: #ffd700;
+  cursor: pointer;
+  margin-top: 20px;
+  text-shadow: 0 0 10px #ffd700;
+}
+
+/* Затемнение */
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(3px);
+  z-index: 10;
+  box-shadow: inset 0 0 40px rgba(255, 215, 0, 0.25);
+}
+
+/* Всплывающее меню */
+.popup-menu {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(20, 20, 20, 0.85);
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow:
+    0 0 25px rgba(255, 215, 0, 0.35),
+    0 0 60px rgba(255, 215, 0, 0.15);
+  z-index: 11;
+  width: 80%;
+  max-width: 300px;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -45%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.popup-menu a {
+  display: block;
+  margin: 15px 0;
+  font-size: 22px;
+  color: #ffd700;
+  text-decoration: none;
+  text-shadow: 0 0 8px #ffd700;
+}
+
+.close-btn {
+  font-size: 26px;
+  color: #ffd700;
+  cursor: pointer;
+  margin-bottom: 10px;
+  text-shadow: 0 0 10px #ffd700;
+}
+
+/* 📱 Мобильная версия */
+@media (max-width: 768px) {
+  nav.menu {
+    display: none;
+  }
+
+  .burger {
+    display: block;
+  }
 }

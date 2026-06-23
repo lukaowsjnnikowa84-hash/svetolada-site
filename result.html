@@ -3,21 +3,234 @@
   <head>
     <meta charset="UTF-8" />
     <title>Ваш отчёт — Светолада</title>
-    <link rel="stylesheet" href="styles.css" />
+
+    <style>
+      body {
+        margin: 0;
+        font-family: "Segoe UI", sans-serif;
+        background: radial-gradient(
+          circle at 50% 50%,
+          #0b0c10 0%,
+          #000000 100%
+        );
+        color: #f7f2e9;
+        text-align: center;
+        overflow-x: hidden;
+      }
+
+      .stars {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 200%;
+        height: 200%;
+        background: url("background.png") repeat;
+        background-size: cover;
+        animation: moveStars 60s linear infinite;
+        z-index: -1;
+      }
+
+      @keyframes moveStars {
+        from {
+          transform: translate(0, 0);
+        }
+        to {
+          transform: translate(-50%, -50%);
+        }
+      }
+
+      img.logo {
+        width: 120px;
+        margin-top: 30px;
+        filter: drop-shadow(0 0 12px #ffd700);
+      }
+
+      /* Обычное меню (ПК) */
+      nav.menu a {
+        color: #ffd700;
+        margin: 0 15px;
+        text-decoration: none;
+        font-size: 22px;
+        text-shadow: 0 0 8px #ffd700;
+      }
+
+      /* Бургер */
+      .burger {
+        display: none;
+        font-size: 32px;
+        color: #ffd700;
+        cursor: pointer;
+        margin-top: 20px;
+        text-shadow: 0 0 10px #ffd700;
+      }
+
+      /* Затемнение */
+      .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.75);
+        backdrop-filter: blur(3px);
+        z-index: 10;
+        box-shadow: inset 0 0 40px rgba(255, 215, 0, 0.25);
+      }
+
+      /* Всплывающее меню */
+      .popup-menu {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(20, 20, 20, 0.85);
+        padding: 30px;
+        border-radius: 15px;
+        text-align: center;
+        box-shadow:
+          0 0 25px rgba(255, 215, 0, 0.35),
+          0 0 60px rgba(255, 215, 0, 0.15);
+        z-index: 11;
+        width: 80%;
+        max-width: 300px;
+        animation: fadeIn 0.3s ease;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translate(-50%, -45%);
+        }
+        to {
+          opacity: 1;
+          transform: translate(-50%, -50%);
+        }
+      }
+
+      .popup-menu a {
+        display: block;
+        margin: 15px 0;
+        font-size: 22px;
+        color: #ffd700;
+        text-decoration: none;
+        text-shadow: 0 0 8px #ffd700;
+      }
+
+      .close-btn {
+        font-size: 26px;
+        color: #ffd700;
+        cursor: pointer;
+        margin-bottom: 10px;
+        text-shadow: 0 0 10px #ffd700;
+      }
+
+      .container {
+        margin-top: 40px;
+        background: rgba(255, 255, 255, 0.05);
+        padding: 40px;
+        border-radius: 15px;
+        width: 420px;
+        margin-left: auto;
+        margin-right: auto;
+        box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+      }
+
+      .title {
+        font-size: 32px;
+        color: #ffd700;
+        text-shadow: 0 0 10px #ffd700;
+        margin-bottom: 15px;
+      }
+
+      .subtitle {
+        font-size: 18px;
+        opacity: 0.9;
+      }
+
+      .button {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 14px 28px;
+        font-size: 20px;
+        font-weight: 600;
+        background: #4a90e2;
+        color: white;
+        text-decoration: none;
+        border-radius: 10px;
+        box-shadow:
+          0 0 12px #4a90e2,
+          0 0 25px #4a90e2;
+        transition: 0.3s;
+      }
+
+      .button:hover {
+        background: #357ab8;
+        box-shadow:
+          0 0 20px #4a90e2,
+          0 0 40px #4a90e2;
+      }
+
+      footer {
+        margin-top: 40px;
+        padding: 15px;
+        font-size: 16px;
+        color: #ffd700;
+        opacity: 0.7;
+      }
+
+      /* 📱 Мобильная версия */
+      @media (max-width: 768px) {
+        nav.menu {
+          display: none;
+        }
+
+        .burger {
+          display: block;
+        }
+
+        .container {
+          width: 90%;
+          padding: 25px;
+        }
+
+        .title {
+          font-size: 26px;
+        }
+      }
+    </style>
   </head>
+
   <body>
-    <!-- Звёзды -->
-    <div class="star" style="top: 50px; left: 100px"></div>
-    <div class="star" style="top: 200px; left: 300px"></div>
-    <div class="star" style="top: 400px; left: 600px"></div>
-    <div class="star" style="top: 150px; left: 800px"></div>
-    <div class="star" style="top: 350px; left: 200px"></div>
+    <div class="stars"></div>
+
+    <img src="icon.png" alt="Логотип Светолада" class="logo" />
+
+    <!-- Бургер -->
+    <div class="burger" onclick="openMenu()">☰</div>
+
+    <!-- Затемнение -->
+    <div class="overlay" onclick="closeMenu()"></div>
+
+    <!-- Всплывающее меню -->
+    <div class="popup-menu">
+      <div class="close-btn" onclick="closeMenu()">✕</div>
+      <a href="index.html">🏠 Главная</a>
+      <a href="form.html">✨ Анализ</a>
+      <a href="about.html">🌿 О Светоладе</a>
+    </div>
+
+    <!-- Обычное меню (ПК) -->
+    <nav class="menu" style="margin-top: 20px">
+      <a href="index.html">🏠 Главная</a>
+      <a href="form.html">✨ Анализ</a>
+      <a href="about.html">🌿 О Светоладе</a>
+    </nav>
 
     <div class="container">
       <h2 class="title">Ваш отчёт готов ✨</h2>
-      <p class="subtitle">
-        Спасибо за доверие! Вы можете сейчас скачать отчёт ниже.
-      </p>
+      <p class="subtitle">Спасибо за доверие! Вы можете скачать отчёт ниже.</p>
 
       <a id="downloadLink" class="button" href="#" download>📄 Скачать PDF</a>
 
@@ -27,7 +240,22 @@
       <a href="index.html" class="button">🏠 Вернуться на главную</a>
     </div>
 
+    <footer>Обновлено: <span id="update-date"></span></footer>
+
     <script>
+      document.getElementById("update-date").textContent =
+        new Date().toLocaleDateString("ru-RU");
+
+      function openMenu() {
+        document.querySelector(".overlay").style.display = "block";
+        document.querySelector(".popup-menu").style.display = "block";
+      }
+
+      function closeMenu() {
+        document.querySelector(".overlay").style.display = "none";
+        document.querySelector(".popup-menu").style.display = "none";
+      }
+
       const urlParams = new URLSearchParams(window.location.search);
       const fileUrl = urlParams.get("file");
 
