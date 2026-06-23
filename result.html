@@ -1,37 +1,39 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Ваш отчёт — Светолада</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Звёзды -->
+    <div class="star" style="top: 50px; left: 100px"></div>
+    <div class="star" style="top: 200px; left: 300px"></div>
+    <div class="star" style="top: 400px; left: 600px"></div>
+    <div class="star" style="top: 150px; left: 800px"></div>
+    <div class="star" style="top: 350px; left: 200px"></div>
 
-<!-- Звёзды -->
-<div class="star" style="top:50px; left:100px;"></div>
-<div class="star" style="top:200px; left:300px;"></div>
-<div class="star" style="top:400px; left:600px;"></div>
-<div class="star" style="top:150px; left:800px;"></div>
-<div class="star" style="top:350px; left:200px;"></div>
+    <div class="container">
+      <h2 class="title">Ваш отчёт готов ✨</h2>
+      <p class="subtitle">
+        Спасибо за доверие! Вы можете сейчас скачать отчёт ниже.
+      </p>
 
-<div class="container">
-    <h2 class="title">Ваш отчёт готов ✨</h2>
-    <p class="subtitle">Спасибо за доверие! Вы можете скачать отчёт ниже.</p>
+      <a id="downloadLink" class="button" href="#" download>📄 Скачать PDF</a>
 
-    <a id="downloadLink" class="button" href="#" download>📄 Скачать PDF</a>
+      <p class="subtitle" style="margin-top: 20px">
+        Или вернитесь на главную страницу:
+      </p>
+      <a href="index.html" class="button">🏠 Вернуться на главную</a>
+    </div>
 
-    <p class="subtitle" style="margin-top: 20px;">Или вернитесь на главную страницу:</p>
-    <a href="index.html" class="button">🏠 Вернуться на главную</a>
-</div>
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      const fileUrl = urlParams.get("file");
 
-<script>
-    const urlParams = new URLSearchParams(window.location.search);
-    const fileUrl = urlParams.get("file");
-
-    if (fileUrl) {
+      if (fileUrl) {
         document.getElementById("downloadLink").href = fileUrl;
-    }
-</script>
-
-</body>
+      }
+    </script>
+  </body>
 </html>
