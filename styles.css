@@ -1,36 +1,9 @@
 .documents-title {
   color: #ffd700;
-  text-shadow: 0 0 8px #ffd700,
-               0 0 15px #ffec8b;
+  text-shadow:
+    0 0 8px #ffd700,
+    0 0 15px #ffec8b;
   margin-bottom: 20px;
   opacity: 0;
-  animation: fadeIn 2s forwards; /* базовая скорость для больших экранов */
+  animation: fadeIn 1.5s forwards; /* плавное появление */
 }
-
-@keyframes fadeIn {
-  to { opacity: 1; }
-}
-
-/* Средние экраны (ноутбуки, планшеты) */
-@media (max-width: 1200px) {
-  .documents-title {
-    animation-duration: 1.5s;
-  }
-}
-
-/* Малые экраны (телефоны) */
-@media (max-width: 768px) {
-  .documents-title {
-    animation-duration: 1s;
-  }
-}
-
-/* Очень маленькие экраны (старые телефоны) */
-@media (max-width: 480px) {
-  .documents-title {
-    animation-duration: 0.7s;
-  }
-}
-
-
-
