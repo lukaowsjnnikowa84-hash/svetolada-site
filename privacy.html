@@ -13,7 +13,7 @@
           #0b0c10 0%,
           #000000 100%
         );
-        color: #f7f2e9;
+        color: #ffffff;
         text-align: center;
         overflow-x: hidden;
       }
@@ -26,7 +26,7 @@
         height: 200%;
         background: url("background.png") repeat;
         background-size: cover;
-        animation: moveStars 60s linear infinite;
+        animation: moveStars 40s linear infinite;
         z-index: -1;
       }
 
@@ -35,22 +35,26 @@
           transform: translate(0, 0);
         }
         to {
-          transform: translate(-50%, -50%);
+          transform: translate(-50%, 0);
         }
       }
 
       img.logo {
-        width: 120px;
-        margin-top: 30px;
-        filter: drop-shadow(0 0 12px #ffd700);
+        width: 150px;
+        margin-top: 20px;
+        filter: drop-shadow(0 0 14px #ffd700);
       }
 
-      /* Обычное меню (ПК) */
+      /* Меню */
+      nav.menu {
+        margin-top: 20px;
+      }
+
       nav.menu a {
         color: #ffd700;
-        margin: 0 15px;
+        margin: 0 18px;
         text-decoration: none;
-        font-size: 22px;
+        font-size: 24px;
         text-shadow: 0 0 8px #ffd700;
       }
 
@@ -64,7 +68,6 @@
         text-shadow: 0 0 10px #ffd700;
       }
 
-      /* Затемнение */
       .overlay {
         display: none;
         position: fixed;
@@ -75,10 +78,8 @@
         background: rgba(0, 0, 0, 0.75);
         backdrop-filter: blur(3px);
         z-index: 10;
-        box-shadow: inset 0 0 40px rgba(255, 215, 0, 0.25);
       }
 
-      /* Всплывающее меню */
       .popup-menu {
         display: none;
         position: fixed;
@@ -95,18 +96,6 @@
         z-index: 11;
         width: 80%;
         max-width: 300px;
-        animation: fadeIn 0.3s ease;
-      }
-
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translate(-50%, -45%);
-        }
-        to {
-          opacity: 1;
-          transform: translate(-50%, -50%);
-        }
       }
 
       .popup-menu a {
@@ -126,6 +115,7 @@
         text-shadow: 0 0 10px #ffd700;
       }
 
+      /* Контейнер */
       .container {
         margin-top: 40px;
         background: rgba(255, 255, 255, 0.05);
@@ -134,15 +124,15 @@
         width: 800px;
         margin-left: auto;
         margin-right: auto;
-        box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+        box-shadow: 0 0 20px rgba(255, 215, 0, 0.25);
         text-align: left;
       }
 
       h1 {
         text-align: center;
-        font-size: 42px;
+        font-size: 48px;
         color: #ffd700;
-        text-shadow: 0 0 10px #ffd700;
+        text-shadow: 0 0 14px #ffd700;
         margin-bottom: 30px;
       }
 
@@ -153,25 +143,24 @@
       }
 
       p {
-        font-size: 18px;
-        line-height: 1.6;
+        font-size: 20px;
+        line-height: 1.7;
         margin-top: 10px;
       }
 
       footer {
-        margin-top: 40px;
+        margin-top: 50px;
         padding: 15px;
-        font-size: 16px;
-        color: #ffd700;
-        opacity: 0.7;
+        font-size: 18px;
+        color: #ffe680;
+        text-shadow: 0 0 8px rgba(255, 230, 128, 1);
       }
 
-      /* 📱 Мобильная версия */
+      /* Мобильная версия */
       @media (max-width: 768px) {
         nav.menu {
           display: none;
         }
-
         .burger {
           display: block;
         }
@@ -182,7 +171,7 @@
         }
 
         h1 {
-          font-size: 32px;
+          font-size: 36px;
         }
       }
     </style>
@@ -193,13 +182,9 @@
 
     <img src="icon.png" alt="Логотип Светолада" class="logo" />
 
-    <!-- Бургер -->
     <div class="burger" onclick="openMenu()">☰</div>
-
-    <!-- Затемнение -->
     <div class="overlay" onclick="closeMenu()"></div>
 
-    <!-- Всплывающее меню -->
     <div class="popup-menu">
       <div class="close-btn" onclick="closeMenu()">✕</div>
       <a href="index.html">🏠 Главная</a>
@@ -207,8 +192,7 @@
       <a href="about.html">🌿 О Светоладе</a>
     </div>
 
-    <!-- Обычное меню (ПК) -->
-    <nav class="menu" style="margin-top: 20px">
+    <nav class="menu">
       <a href="index.html">🏠 Главная</a>
       <a href="form.html">✨ Анализ</a>
       <a href="about.html">🌿 О Светоладе</a>
@@ -253,7 +237,7 @@
       <h2>7. Контакты</h2>
       <p>По вопросам конфиденциальности вы можете написать:</p>
 
-      <p style="font-size: 20px; color: #ffd700">
+      <p style="font-size: 22px; color: #ffd700; text-shadow: 0 0 8px #ffd700">
         ✉ svetolada.contact@gmail.com
       </p>
 
