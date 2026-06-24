@@ -15,7 +15,7 @@
           #0b0c10 0%,
           #000000 100%
         );
-        color: #f7f2e9;
+        color: #ffffff;
         text-align: center;
         overflow-x: hidden;
       }
@@ -42,12 +42,42 @@
       }
 
       img.logo {
-        width: 140px;
-        margin-top: 40px;
-        filter: drop-shadow(0 0 12px #ffd700);
+        width: 160px;
+        margin-top: 50px;
+        filter: drop-shadow(0 0 14px #ffd700);
       }
 
-      /* Обычное меню */
+      /* Заголовок */
+      h1.title {
+        font-size: 64px;
+        margin-top: 40px;
+        color: #ffffff;
+        text-shadow:
+          0 0 14px rgba(255, 255, 255, 0.9),
+          0 0 28px rgba(120, 180, 255, 0.7);
+        letter-spacing: 2px;
+      }
+
+      /* Кнопка */
+      .main-button {
+        display: inline-block;
+        margin-top: 35px;
+        padding: 18px 40px;
+        font-size: 26px;
+        color: #ffffff;
+        background: linear-gradient(90deg, #5aa9f4, #7bc4ff);
+        border-radius: 12px;
+        text-decoration: none;
+        box-shadow: 0 0 18px rgba(90, 169, 244, 0.8);
+        transition: 0.3s;
+      }
+
+      .main-button:hover {
+        box-shadow: 0 0 28px rgba(120, 200, 255, 1);
+        transform: scale(1.05);
+      }
+
+      /* Меню */
       nav.menu {
         margin-top: 25px;
       }
@@ -62,7 +92,7 @@
 
       /* Футер */
       footer {
-        margin-top: 60px;
+        margin-top: 80px;
         padding: 15px;
         font-size: 16px;
         color: #ffd700;
@@ -81,14 +111,16 @@
 
     <img src="icon.png" alt="Логотип Светолада" class="logo" />
 
-    <!-- Обычное меню -->
+    <h1 class="title">Светолада ✨</h1>
+
+    <a href="form.html" class="main-button">Сделать персональный анализ</a>
+
     <nav class="menu">
       <a href="index.html">🏠 Главная</a>
       <a href="form.html">✨ Анализ</a>
       <a href="about.html">🌿 О Светоладе</a>
     </nav>
 
-    <!-- Футер -->
     <footer>
       <a href="privacy.html">Безопасность</a> | © Светолада, 2026 | версия
       <span id="update-date"></span>
