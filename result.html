@@ -40,6 +40,12 @@
         font-size: 24px;
         text-shadow: 0 0 8px #ffd700;
       }
+      h2 {
+        color:#ffd700;
+        text-shadow:0 0 12px #ffd700;
+        margin-top:30px;
+        font-size:42px;
+      }
       .tiles-container {
         margin: 40px auto;
         width: 90%;
@@ -73,13 +79,6 @@
         text-shadow: 0 0 8px #7bc4ff;
       }
       .tile p { margin: 0; font-size: 16px; opacity: 0.9; }
-      footer {
-        margin-top: 40px;
-        padding: 15px;
-        font-size: 18px;
-        color: #ffe680;
-        text-shadow: 0 0 8px rgba(255, 230, 128, 1);
-      }
       .report-container {
         margin: 30px auto;
         max-width: 800px;
@@ -105,27 +104,35 @@
         background: #6bb8ff;
         box-shadow: 0 0 28px rgba(120, 200, 255, 1);
       }
+      footer {
+        margin-top: 40px;
+        padding: 15px;
+        font-size: 18px;
+        color: #ffe680;
+        text-shadow: 0 0 8px rgba(255, 230, 128, 1);
+      }
     </style>
   </head>
   <body>
     <div class="stars"></div>
     <img src="icon.png" alt="Логотип Светолада" class="logo" />
+
     <nav class="menu">
       <a href="index.html">🏠 Главная</a>
-      <a href="form.html">✨ Анализ</a>
+      <a href="analysis.html">✨ Анализ</a>
       <a href="about.html">🌿 О Светоладе</a>
     </nav>
 
-    <h2 style="color:#ffd700;text-shadow:0 0 12px #ffd700;margin-top:30px;font-size:42px;">
-      Ваш отчёт готов ✨
-    </h2>
+    <h2>Ваш отчёт готов ✨</h2>
 
     <p style="font-size:18px;color:#ffe680;text-shadow:0 0 8px rgba(255,230,128,1);margin-bottom:20px;">
       ⚠️ Ваш персональный отчёт появится на экране сразу, а PDF‑версия будет готова позже.
     </p>
 
-    <p style="font-size:20px;opacity:0.9;margin-bottom:30px">
-      Выберите, какие разделы вы хотите получить.
+    <div id="report-output" class="report-container"></div>
+
+    <p style="font-size:20px;opacity:0.9;margin-bottom:30px;text-align:center;">
+      Выберите, какие разделы вы хотите получить:
     </p>
 
     <div class="tiles-container">
@@ -143,8 +150,6 @@
       <div class="tile" data-type="ideal"><h3>🌟 Идеальный партнёр</h3><p>Если партнёр не указан — создадим портрет идеального.</p></div>
     </div>
 
-    <div id="report-output" class="report-container"></div>
-
     <div style="margin-top: 30px;">
       <button id="download-pdf" class="submit-btn">📥 Скачать PDF</button>
     </div>
@@ -154,6 +159,7 @@
       Проект создан Людмилой в партнёрстве с ИИ Copilot. 01.07.2026
     </footer>
 
+    <script src="analyze.js"></script>
     <script>
       document.getElementById("update-date").textContent =
         new Date().toLocaleDateString("ru-RU");
@@ -163,24 +169,14 @@
         container.innerHTML = "";
         blocks.forEach(block => {
           const section = document.createElement("div");
-          section.innerHTML = `<h3>${block.title}</h3><p>${block.text}</p>`;
+          section.innerHTML = `<h3>${block.title}</h3><p>${block.content}</p>`;
           container.appendChild(section);
         });
       }
 
       const user = getUserData();
+      document.getElementById("report-output").innerHTML =
+        `<h3 style="color:#ffd700;">Добро пожаловать, ${user.name || "Гость"}!</h3>
+         <p style="font-size:18px;opacity:0.9;">Ваш отчёт готов. Выберите раздел, который хотите просмотреть.</p>`;
 
-      document.querySelectorAll(".tile").forEach(tile => {
-        tile.addEventListener("click", () => {
-          const type = tile.getAttribute("data-type");
-          if (!type) {
-            alert("Ошибка: плитка без типа.");
-            return;
-          }
-          const blocks = buildReport(type, user);
-          showReport(blocks);       // показать на экране
-          exportToPDF(blocks);      // и сохранить PDF
-        });
-      });
-
-      document.getElementById("download-pdf").addEventListener("click", () =>
+      document.querySelectorAll(".tile").
