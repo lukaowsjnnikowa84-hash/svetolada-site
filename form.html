@@ -1,23 +1,186 @@
-<label>Данные партнёра (необязательно)</label>
-<input type="text" name="partner_name" placeholder="Имя партнёра" />
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ваш отчёт — Светолада</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: "Segoe UI", sans-serif;
+        background: radial-gradient(circle at 50% 50%, #0b0c10 0%, #000000 100%);
+        color: #ffffff;
+        text-align: center;
+        overflow-x: hidden;
+      }
+      .stars {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 200%;
+        height: 200%;
+        background: url("background.png") repeat;
+        background-size: cover;
+        animation: moveStars 40s linear infinite;
+        z-index: -1;
+      }
+      @keyframes moveStars {
+        from { transform: translate(0, 0); }
+        to { transform: translate(-50%, 0); }
+      }
+      img.logo {
+        width: 150px;
+        margin-top: 20px;
+        filter: drop-shadow(0 0 14px #ffd700);
+      }
+      nav.menu { margin-top: 20px; }
+      nav.menu a {
+        color: #ffd700;
+        margin: 0 18px;
+        text-decoration: none;
+        font-size: 24px;
+        text-shadow: 0 0 8px #ffd700;
+      }
+      .tiles-container {
+        margin: 40px auto;
+        width: 90%;
+        max-width: 900px;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      @media (min-width: 768px) {
+        .tiles-container { grid-template-columns: 1fr 1fr; }
+      }
+      .tile {
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(6px);
+        border-radius: 14px;
+        padding: 25px;
+        text-align: left;
+        color: #ffffff;
+        box-shadow: 0 0 18px rgba(120, 200, 255, 0.4);
+        transition: 0.3s;
+        cursor: pointer;
+      }
+      .tile:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 0 28px rgba(150, 220, 255, 0.7);
+      }
+      .tile h3 {
+        margin: 0 0 10px 0;
+        font-size: 24px;
+        color: #aee4ff;
+        text-shadow: 0 0 8px #7bc4ff;
+      }
+      .tile p { margin: 0; font-size: 16px; opacity: 0.9; }
+      footer {
+        margin-top: 40px;
+        padding: 15px;
+        font-size: 18px;
+        color: #ffe680;
+        text-shadow: 0 0 8px rgba(255, 230, 128, 1);
+      }
+      .report-container {
+        margin: 30px auto;
+        max-width: 800px;
+        text-align: left;
+      }
+      .report-container h3 {
+        color: #ffd700;
+        text-shadow: 0 0 8px #ffd700;
+      }
+      .submit-btn {
+        margin-top: 20px;
+        padding: 12px 24px;
+        font-size: 20px;
+        border-radius: 12px;
+        border: none;
+        background: #4aa3ff;
+        color: white;
+        cursor: pointer;
+        box-shadow: 0 0 18px rgba(80, 180, 255, 0.8);
+        transition: 0.3s;
+      }
+      .submit-btn:hover {
+        background: #6bb8ff;
+        box-shadow: 0 0 28px rgba(120, 200, 255, 1);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="stars"></div>
+    <img src="icon.png" alt="Логотип Светолада" class="logo" />
+    <nav class="menu">
+      <a href="index.html">🏠 Главная</a>
+      <a href="form.html">✨ Анализ</a>
+      <a href="about.html">🌿 О Светоладе</a>
+    </nav>
 
-<input type="date" name="partner_birthdate" />
+    <h2 style="color:#ffd700;text-shadow:0 0 12px #ffd700;margin-top:30px;font-size:42px;">
+      Ваш отчёт готов ✨
+    </h2>
 
-<div style="margin-top: 10px">
-  <label>
-    <input type="checkbox" name="no_partner" />
-    Нет партнёра — создать портрет идеального
-  </label>
-</div>
+    <p style="font-size:18px;color:#ffe680;text-shadow:0 0 8px rgba(255,230,128,1);margin-bottom:20px;">
+      ⚠️ Ваш персональный отчёт появится на экране сразу, а PDF‑версия будет готова позже.
+    </p>
 
-<p
-  style="
-    margin-top: 20px;
-    font-size: 18px;
-    color: #ffe680;
-    text-shadow: 0 0 8px rgba(255, 230, 128, 1);
-  "
->
-  ⚠️ Ваш персональный отчёт будет доступен в формате PDF позже. Сейчас вы
-  получите предварительный анализ на экране.
-</p>
+    <p style="font-size:20px;opacity:0.9;margin-bottom:30px">
+      Выберите, какие разделы вы хотите получить.
+    </p>
+
+    <div class="tiles-container">
+      <div class="tile" data-type="full"><h3>✨ Полный отчёт</h3><p>Все разделы, энергии, архетипы и совместимость.</p></div>
+      <div class="tile" data-type="personality"><h3>🌿 Личность</h3><p>Ваш характер, энергия, сильные стороны и тени.</p></div>
+      <div class="tile" data-type="soul"><h3>💛 Душа</h3><p>Глубинные мотивы, желания и внутренняя вибрация.</p></div>
+      <div class="tile" data-type="destiny"><h3>🔥 Судьба</h3><p>Путь, задачи, предназначение и жизненная миссия.</p></div>
+      <div class="tile" data-type="shadows"><h3>🌙 Тени</h3><p>Уроки, слабые стороны и то, что важно проработать.</p></div>
+      <div class="tile" data-type="archetypes"><h3>🌸 Архетипы</h3><p>Образы, которые ведут вас по жизни.</p></div>
+      <div class="tile" data-type="year"><h3>🌞 Энергия года</h3><p>Какие вибрации активны в этом году.</p></div>
+      <div class="tile" data-type="month"><h3>🌜 Энергия месяца</h3><p>Текущая динамика и поддерживающие энергии.</p></div>
+      <div class="tile" data-type="karma"><h3>💫 Кармические задачи</h3><p>Опыт прошлых воплощений и уроки души.</p></div>
+      <div class="tile" data-type="partner"><h3>💞 Партнёр</h3><p>Характер, энергия и особенности вашего партнёра.</p></div>
+      <div class="tile" data-type="compatibility"><h3>🔥 Совместимость</h3><p>Как взаимодействуют ваши энергии.</p></div>
+      <div class="tile" data-type="ideal"><h3>🌟 Идеальный партнёр</h3><p>Если партнёр не указан — создадим портрет идеального.</p></div>
+    </div>
+
+    <div id="report-output" class="report-container"></div>
+
+    <div style="margin-top: 30px;">
+      <button id="download-pdf" class="submit-btn">📥 Скачать PDF</button>
+    </div>
+
+    <footer>
+      Обновлено: <span id="update-date"></span> <br /><br />
+      Проект создан Людмилой в партнёрстве с ИИ Copilot. 01.07.2026
+    </footer>
+
+    <script>
+      document.getElementById("update-date").textContent =
+        new Date().toLocaleDateString("ru-RU");
+
+      function showReport(blocks) {
+        const container = document.getElementById("report-output");
+        container.innerHTML = "";
+        blocks.forEach(block => {
+          const section = document.createElement("div");
+          section.innerHTML = `<h3>${block.title}</h3><p>${block.text}</p>`;
+          container.appendChild(section);
+        });
+      }
+
+      const user = getUserData();
+
+      document.querySelectorAll(".tile").forEach(tile => {
+        tile.addEventListener("click", () => {
+          const type = tile.getAttribute("data-type");
+          if (!type) {
+            alert("Ошибка: плитка без типа.");
+            return;
+          }
+          const blocks = buildReport(type, user);
+          showReport(blocks);       // показать на экране
+          exportToPDF(blocks);      // и сохранить PDF
+        });
+      });
+
+      document.getElementById("download-pdf").addEventListener("click", () =>
