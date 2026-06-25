@@ -57,7 +57,6 @@
         text-shadow: 0 0 8px #ffd700;
       }
 
-      /* ПАНЕЛИ */
       .tiles-container {
         margin: 40px auto;
         width: 90%;
@@ -140,77 +139,95 @@
     </p>
 
     <div class="tiles-container">
-      <div class="tile">
+      <div class="tile" data-type="full">
         <h3>✨ Полный отчёт</h3>
         <p>Все разделы, энергии, архетипы и совместимость.</p>
       </div>
 
-      <div class="tile">
+      <div class="tile" data-type="personality">
         <h3>🌿 Личность</h3>
         <p>Ваш характер, энергия, сильные стороны и тени.</p>
       </div>
 
-      <div class="tile">
+      <div class="tile" data-type="soul">
         <h3>💛 Душа</h3>
         <p>Глубинные мотивы, желания и внутренняя вибрация.</p>
       </div>
 
-      <div class="tile">
+      <div class="tile" data-type="destiny">
         <h3>🔥 Судьба</h3>
         <p>Путь, задачи, предназначение и жизненная миссия.</p>
       </div>
 
-      <div class="tile">
+      <div class="tile" data-type="shadows">
         <h3>🌙 Тени</h3>
         <p>Уроки, слабые стороны и то, что важно проработать.</p>
       </div>
 
-      <div class="tile">
+      <div class="tile" data-type="archetypes">
         <h3>🌸 Архетипы</h3>
         <p>Образы, которые ведут вас по жизни.</p>
       </div>
 
-      <div class="tile">
+      <div class="tile" data-type="year">
         <h3>🌞 Энергия года</h3>
         <p>Какие вибрации активны в этом году.</p>
       </div>
 
-      <div class="tile">
+      <div class="tile" data-type="month">
         <h3>🌜 Энергия месяца</h3>
         <p>Текущая динамика и поддерживающие энергии.</p>
       </div>
 
-      <div class="tile">
+      <div class="tile" data-type="karma">
         <h3>💫 Кармические задачи</h3>
         <p>Опыт прошлых воплощений и уроки души.</p>
       </div>
 
-      <div class="tile">
+      <div class="tile" data-type="partner">
         <h3>💞 Партнёр</h3>
         <p>Характер, энергия и особенности вашего партнёра.</p>
       </div>
 
-      <div class="tile">
+      <div class="tile" data-type="compatibility">
         <h3>🔥 Совместимость</h3>
         <p>Как взаимодействуют ваши энергии.</p>
       </div>
 
-      <div class="tile">
+      <div class="tile" data-type="ideal">
         <h3>🌟 Идеальный партнёр</h3>
         <p>Если партнёр не указан — создадим портрет идеального.</p>
       </div>
-
-      <div class="tile">
-        <h3>🎁 Собрать свой отчёт</h3>
-        <p>Выберите только нужные разделы.</p>
-      </div>
     </div>
 
-    <footer>Обновлено: <span id="update-date"></span></footer>
+    <footer>
+      Обновлено: <span id="update-date"></span> <br /><br />
+      Проект создан Людмилой в партнёрстве с ИИ Copilot. 01.07.2026
+    </footer>
 
     <script>
       document.getElementById("update-date").textContent =
         new Date().toLocaleDateString("ru-RU");
+    </script>
+
+    <script src="analyze.js"></script>
+
+    <script>
+      const user = getUserData();
+
+      document.querySelectorAll(".tile").forEach((tile) => {
+        tile.addEventListener("click", () => {
+          const type = tile.getAttribute("data-type");
+
+          if (!type) {
+            alert("Ошибка: плитка без типа.");
+            return;
+          }
+
+          const blocks = buildReport(type, user);
+          exportToPDF(blocks);
+        });
+      });
     </script>
   </body>
 </html>
