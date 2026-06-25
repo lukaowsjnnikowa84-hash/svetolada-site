@@ -2,12 +2,16 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <title>Ваш отчёт — Светолада</title>
+    <title>Анализ — Светолада</title>
     <style>
       body {
         margin: 0;
         font-family: "Segoe UI", sans-serif;
-        background: radial-gradient(circle at 50% 50%, #0b0c10 0%, #000000 100%);
+        background: radial-gradient(
+          circle at 50% 50%,
+          #0b0c10 0%,
+          #000000 100%
+        );
         color: #ffffff;
         text-align: center;
         overflow-x: hidden;
@@ -24,75 +28,70 @@
         z-index: -1;
       }
       @keyframes moveStars {
-        from { transform: translate(0, 0); }
-        to { transform: translate(-50%, 0); }
+        from {
+          transform: translate(0, 0);
+        }
+        to {
+          transform: translate(-50%, 0);
+        }
       }
-      img.logo {
-        width: 150px;
-        margin-top: 20px;
-        filter: drop-shadow(0 0 14px #ffd700);
-      }
-      nav.menu { margin-top: 20px; }
-      nav.menu a {
+      h2 {
+        margin-top: 30px;
         color: #ffd700;
-        margin: 0 18px;
-        text-decoration: none;
-        font-size: 24px;
-        text-shadow: 0 0 8px #ffd700;
+        text-shadow: 0 0 12px #ffd700;
+        font-size: 38px;
       }
-      .tiles-container {
-        margin: 40px auto;
+      form {
         width: 90%;
-        max-width: 900px;
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 20px;
-      }
-      @media (min-width: 768px) {
-        .tiles-container { grid-template-columns: 1fr 1fr; }
-      }
-      .tile {
-        background: rgba(255, 255, 255, 0.15);
-        backdrop-filter: blur(6px);
-        border-radius: 14px;
-        padding: 25px;
-        text-align: left;
-        color: #ffffff;
-        box-shadow: 0 0 18px rgba(120, 200, 255, 0.4);
-        transition: 0.3s;
-        cursor: pointer;
-      }
-      .tile:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 0 28px rgba(150, 220, 255, 0.7);
-      }
-      .tile h3 {
-        margin: 0 0 10px 0;
-        font-size: 24px;
-        color: #aee4ff;
-        text-shadow: 0 0 8px #7bc4ff;
-      }
-      .tile p { margin: 0; font-size: 16px; opacity: 0.9; }
-      footer {
-        margin-top: 40px;
-        padding: 15px;
-        font-size: 18px;
-        color: #ffe680;
-        text-shadow: 0 0 8px rgba(255, 230, 128, 1);
-      }
-      .report-container {
+        max-width: 500px;
         margin: 30px auto;
-        max-width: 800px;
         text-align: left;
+        font-size: 20px;
       }
-      .report-container h3 {
-        color: #ffd700;
-        text-shadow: 0 0 8px #ffd700;
+      label {
+        display: block;
+        margin-top: 20px;
+        margin-bottom: 8px;
+        font-size: 22px;
+        color: #ffe680;
+        text-shadow: 0 0 6px #000;
+      }
+      input,
+      select {
+        width: 100%;
+        padding: 14px;
+        font-size: 20px;
+        border-radius: 10px;
+        border: none;
+        outline: none;
+        background: rgba(255, 255, 255, 0.15);
+        color: #ffffff;
+        box-shadow: 0 0 12px rgba(120, 200, 255, 0.4);
+      }
+      input[type="radio"] {
+        width: auto;
+        transform: scale(1.5);
+        margin-right: 10px;
+      }
+      .radio-block {
+        margin-top: 15px;
+        padding: 15px;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.08);
+        box-shadow: 0 0 10px rgba(120, 200, 255, 0.3);
+      }
+      .partner-block {
+        margin-top: 30px;
+        padding: 15px;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.08);
+        box-shadow: 0 0 10px rgba(120, 200, 255, 0.3);
       }
       .submit-btn {
-        margin-top: 20px;
-        padding: 12px 24px;
-        font-size: 20px;
+        margin-top: 30px;
+        width: 100%;
+        padding: 18px;
+        font-size: 24px;
         border-radius: 12px;
         border: none;
         background: #4aa3ff;
@@ -105,82 +104,123 @@
         background: #6bb8ff;
         box-shadow: 0 0 28px rgba(120, 200, 255, 1);
       }
+      footer {
+        margin-top: 50px;
+        padding: 15px;
+        font-size: 18px;
+        color: #ffe680;
+        text-shadow: 0 0 6px #000;
+      }
     </style>
+    <script>
+      function updateTimeFields() {
+        const exact = document.getElementById("time_exact");
+        const approx = document.getElementById("time_approx");
+        document.getElementById("exact_time_input").style.display =
+          exact.checked ? "block" : "none";
+        document.getElementById("approx_time_select").style.display =
+          approx.checked ? "block" : "none";
+      }
+    </script>
   </head>
   <body>
     <div class="stars"></div>
-    <img src="icon.png" alt="Логотип Светолада" class="logo" />
-    <nav class="menu">
-      <a href="index.html">🏠 Главная</a>
-      <a href="form.html">✨ Анализ</a>
-      <a href="about.html">🌿 О Светоладе</a>
-    </nav>
+    <h2>Введите ваши данные</h2>
 
-    <h2 style="color:#ffd700;text-shadow:0 0 12px #ffd700;margin-top:30px;font-size:42px;">
-      Ваш отчёт готов ✨
-    </h2>
+    <form action="result.html" method="GET">
+      <!-- Основные данные -->
+      <label>Ваше имя</label>
+      <input type="text" name="name" required />
 
-    <p style="font-size:18px;color:#ffe680;text-shadow:0 0 8px rgba(255,230,128,1);margin-bottom:20px;">
-      ⚠️ Ваш персональный отчёт появится на экране сразу, а PDF‑версия будет готова позже.
-    </p>
+      <label>Дата рождения</label>
+      <input type="date" name="birthdate" required />
 
-    <p style="font-size:20px;opacity:0.9;margin-bottom:30px">
-      Выберите, какие разделы вы хотите получить.
-    </p>
+      <label>Время рождения</label>
+      <div class="radio-block">
+        <div>
+          <input
+            type="radio"
+            name="time_mode"
+            id="time_exact"
+            value="exact"
+            onclick="updateTimeFields()"
+          />
+          <label for="time_exact" style="display: inline">Точное время</label>
+        </div>
+        <div id="exact_time_input" style="display: none; margin-top: 10px">
+          <input type="time" name="birthtime" />
+        </div>
+        <div style="margin-top: 15px">
+          <input
+            type="radio"
+            name="time_mode"
+            id="time_approx"
+            value="approx"
+            onclick="updateTimeFields()"
+          />
+          <label for="time_approx" style="display: inline"
+            >Примерное время рождения</label
+          >
+        </div>
+        <div id="approx_time_select" style="display: none; margin-top: 10px">
+          <select name="birthtime_range">
+            <option value="morning">Утро (06:00–11:59)</option>
+            <option value="day">День (12:00–17:59)</option>
+            <option value="evening">Вечер (18:00–22:59)</option>
+            <option value="night">Ночь (23:00–05:59)</option>
+          </select>
+        </div>
+        <div style="margin-top: 15px">
+          <input
+            type="radio"
+            name="time_mode"
+            id="time_unknown"
+            value="unknown"
+            onclick="updateTimeFields()"
+          />
+          <label for="time_unknown" style="display: inline"
+            >Не знаю время</label
+          >
+        </div>
+      </div>
 
-    <div class="tiles-container">
-      <div class="tile" data-type="full"><h3>✨ Полный отчёт</h3><p>Все разделы, энергии, архетипы и совместимость.</p></div>
-      <div class="tile" data-type="personality"><h3>🌿 Личность</h3><p>Ваш характер, энергия, сильные стороны и тени.</p></div>
-      <div class="tile" data-type="soul"><h3>💛 Душа</h3><p>Глубинные мотивы, желания и внутренняя вибрация.</p></div>
-      <div class="tile" data-type="destiny"><h3>🔥 Судьба</h3><p>Путь, задачи, предназначение и жизненная миссия.</p></div>
-      <div class="tile" data-type="shadows"><h3>🌙 Тени</h3><p>Уроки, слабые стороны и то, что важно проработать.</p></div>
-      <div class="tile" data-type="archetypes"><h3>🌸 Архетипы</h3><p>Образы, которые ведут вас по жизни.</p></div>
-      <div class="tile" data-type="year"><h3>🌞 Энергия года</h3><p>Какие вибрации активны в этом году.</p></div>
-      <div class="tile" data-type="month"><h3>🌜 Энергия месяца</h3><p>Текущая динамика и поддерживающие энергии.</p></div>
-      <div class="tile" data-type="karma"><h3>💫 Кармические задачи</h3><p>Опыт прошлых воплощений и уроки души.</p></div>
-      <div class="tile" data-type="partner"><h3>💞 Партнёр</h3><p>Характер, энергия и особенности вашего партнёра.</p></div>
-      <div class="tile" data-type="compatibility"><h3>🔥 Совместимость</h3><p>Как взаимодействуют ваши энергии.</p></div>
-      <div class="tile" data-type="ideal"><h3>🌟 Идеальный партнёр</h3><p>Если партнёр не указан — создадим портрет идеального.</p></div>
-    </div>
+      <label>Пол</label>
+      <select name="gender">
+        <option value="female">Женщина</option>
+        <option value="male">Мужчина</option>
+      </select>
 
-    <div id="report-output" class="report-container"></div>
+      <!-- Данные партнёра -->
+      <div class="partner-block">
+        <label>Данные партнёра (необязательно)</label>
+        <input type="text" name="partner_name" placeholder="Имя партнёра" />
+        <input type="date" name="partner_birthdate" style="margin-top: 10px" />
+        <div style="margin-top: 10px">
+          <label>
+            <input type="checkbox" name="no_partner" />
+            Нет партнёра — создать портрет идеального
+          </label>
+        </div>
+      </div>
 
-    <div style="margin-top: 30px;">
-      <button id="download-pdf" class="submit-btn">📥 Скачать PDF</button>
-    </div>
+      <!-- Предупреждение -->
+      <p
+        style="
+          margin-top: 20px;
+          font-size: 18px;
+          color: #ffd700;
+          text-shadow: 0 0 6px #000;
+        "
+      >
+        ⚠️ Ваш персональный отчёт появится на экране сразу, а PDF‑версия будет
+        готова позже.
+      </p>
+
+      <button class="submit-btn">Продолжить</button>
+    </form>
 
     <footer>
-      Обновлено: <span id="update-date"></span> <br /><br />
       Проект создан Людмилой в партнёрстве с ИИ Copilot. 01.07.2026
     </footer>
-
-    <script>
-      document.getElementById("update-date").textContent =
-        new Date().toLocaleDateString("ru-RU");
-
-      function showReport(blocks) {
-        const container = document.getElementById("report-output");
-        container.innerHTML = "";
-        blocks.forEach(block => {
-          const section = document.createElement("div");
-          section.innerHTML = `<h3>${block.title}</h3><p>${block.text}</p>`;
-          container.appendChild(section);
-        });
-      }
-
-      const user = getUserData();
-
-      document.querySelectorAll(".tile").forEach(tile => {
-        tile.addEventListener("click", () => {
-          const type = tile.getAttribute("data-type");
-          if (!type) {
-            alert("Ошибка: плитка без типа.");
-            return;
-          }
-          const blocks = buildReport(type, user);
-          showReport(blocks);       // показать на экране
-          exportToPDF(blocks);      // и сохранить PDF
-        });
-      });
-
-      document.getElementById("download-pdf").addEventListener("click", () =>
+  </body>
+</html>
