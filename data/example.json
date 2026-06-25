@@ -1,0 +1,236 @@
+{
+  "user_data": {
+    "birth_date": "01.01.1990",
+    "birth_time": "12:00",
+    "birth_place": "Москва"
+  },
+
+  "title": "Отчёт Светолада",
+
+  "introduction": "Это мягкое, спокойное введение, которое настраивает читателя на документ.",
+
+  "sections": [
+    {
+      "id": 1,
+      "block": "Основные вибрации личности",
+      "title": "Нумерология",
+      "key": {
+        "Число судьбы": "Описание",
+        "Число души": "Описание"
+      },
+      "strengths": {
+        "Сила характера": "Описание"
+      },
+      "weaknesses": {
+        "Уязвимость": "Описание"
+      },
+      "recommendations": {
+        "Совет": "Описание"
+      },
+      "summary": {
+        "Итог": "Описание"
+      }
+    },
+
+    {
+      "id": 2,
+      "block": "Основные вибрации личности",
+      "title": "Астрология (Солнце — Луна — Асцендент)",
+      "key": {},
+      "strengths": {},
+      "weaknesses": {},
+      "recommendations": {},
+      "summary": {}
+    },
+
+    {
+      "id": 3,
+      "block": "Основные вибрации личности",
+      "title": "Аспекты",
+      "key": {},
+      "strengths": {},
+      "weaknesses": {},
+      "recommendations": {},
+      "summary": {}
+    },
+
+    {
+      "id": 4,
+      "block": "Основные вибрации личности",
+      "title": "Джйотиш",
+      "key": {},
+      "strengths": {},
+      "weaknesses": {},
+      "recommendations": {},
+      "summary": {}
+    },
+
+    {
+      "id": 5,
+      "block": "Карма и путь души",
+      "title": "Карма",
+      "key": {},
+      "strengths": {},
+      "weaknesses": {},
+      "recommendations": {},
+      "summary": {}
+    },
+
+    {
+      "id": 6,
+      "block": "Карма и путь души",
+      "title": "Путь души",
+      "key": {},
+      "strengths": {},
+      "weaknesses": {},
+      "recommendations": {},
+      "summary": {}
+    },
+
+    {
+      "id": 7,
+      "block": "Карма и путь души",
+      "title": "Предназначение",
+      "key": {},
+      "strengths": {},
+      "weaknesses": {},
+      "recommendations": {},
+      "summary": {}
+    },
+
+    {
+      "id": 8,
+      "block": "Психология и внутренний мир",
+      "title": "Психология",
+      "key": {},
+      "strengths": {},
+      "weaknesses": {},
+      "recommendations": {},
+      "summary": {}
+    },
+
+    {
+      "id": 9,
+      "block": "Психология и внутренний мир",
+      "title": "Детство",
+      "key": {},
+      "strengths": {},
+      "weaknesses": {},
+      "recommendations": {},
+      "summary": {}
+    },
+
+    {
+      "id": 10,
+      "block": "Тело, энергия, здоровье",
+      "title": "Аюрведа",
+      "key": {},
+      "strengths": {},
+      "weaknesses": {},
+      "recommendations": {},
+      "summary": {}
+    },
+
+    {
+      "id": 11,
+      "block": "Тело, энергия, здоровье",
+      "title": "Здоровье",
+      "key": {},
+      "strengths": {},
+      "weaknesses": {},
+      "recommendations": {},
+      "summary": {}
+    },
+
+    {
+      "id": 12,
+      "block": "Тело, энергия, здоровье",
+      "title": "Духовные практики",
+      "key": {},
+      "strengths": {},
+      "weaknesses": {},
+      "recommendations": {},
+      "summary": {}
+    },
+
+    {
+      "id": 13,
+      "block": "Реализация в мире",
+      "title": "Таланты",
+      "key": {},
+      "strengths": {},
+      "weaknesses": {},
+      "recommendations": {},
+      "summary": {}
+    },
+
+    {
+      "id": 14,
+      "block": "Реализация в мире",
+      "title": "Профессия",
+      "key": {},
+      "strengths": {},
+      "weaknesses": {},
+      "recommendations": {},
+      "summary": {}
+    },
+
+    {
+      "id": 15,
+      "block": "Реализация в мире",
+      "title": "Финансы",
+      "key": {},
+      "strengths": {},
+      "weaknesses": {},
+      "recommendations": {},
+      "summary": {}
+    },
+
+    {
+      "id": 16,
+      "block": "Отношения и семья",
+      "title": "Любовь (Отношения)",
+      "key": {},
+      "strengths": {},
+      "weaknesses": {},
+      "recommendations": {},
+      "summary": {}
+    },
+
+    {
+      "id": 17,
+      "block": "Отношения и семья",
+      "title": "Семья",
+      "key": {},
+      "strengths": {},
+      "weaknesses": {},
+      "recommendations": {},
+      "summary": {}
+    },
+
+    {
+      "id": 18,
+      "block": "Отношения и семья",
+      "title": "Совместимость",
+      "key": {},
+      "strengths": {},
+      "weaknesses": {},
+      "recommendations": {},
+      "summary": {}
+    },
+
+    {
+      "id": 19,
+      "block": "Время и вывод",
+      "title": "Прогноз",
+      "key": {},
+      "strengths": {},
+      "weaknesses": {},
+      "recommendations": {},
+      "summary": {}
+    }
+  ],
+
+  "conclusion": "Финальный вывод отчёта Светолада."
+}
+
