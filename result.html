@@ -7,7 +7,11 @@
       body {
         margin: 0;
         font-family: "Segoe UI", sans-serif;
-        background: radial-gradient(circle at 50% 50%, #0b0c10 0%, #000000 100%);
+        background: radial-gradient(
+          circle at 50% 50%,
+          #0b0c10 0%,
+          #000000 100%
+        );
         color: #ffffff;
         text-align: center;
         overflow-x: hidden;
@@ -24,15 +28,21 @@
         z-index: -1;
       }
       @keyframes moveStars {
-        from { transform: translate(0, 0); }
-        to { transform: translate(-50%, 0); }
+        from {
+          transform: translate(0, 0);
+        }
+        to {
+          transform: translate(-50%, 0);
+        }
       }
       img.logo {
         width: 150px;
         margin-top: 20px;
         filter: drop-shadow(0 0 14px #ffd700);
       }
-      nav.menu { margin-top: 20px; }
+      nav.menu {
+        margin-top: 20px;
+      }
       nav.menu a {
         color: #ffd700;
         margin: 0 18px;
@@ -41,10 +51,10 @@
         text-shadow: 0 0 8px #ffd700;
       }
       h2 {
-        color:#ffd700;
-        text-shadow:0 0 12px #ffd700;
-        margin-top:30px;
-        font-size:42px;
+        color: #ffd700;
+        text-shadow: 0 0 12px #ffd700;
+        margin-top: 30px;
+        font-size: 42px;
       }
       .tiles-container {
         margin: 40px auto;
@@ -55,7 +65,9 @@
         gap: 20px;
       }
       @media (min-width: 768px) {
-        .tiles-container { grid-template-columns: 1fr 1fr; }
+        .tiles-container {
+          grid-template-columns: 1fr 1fr;
+        }
       }
       .tile {
         background: rgba(255, 255, 255, 0.15);
@@ -78,7 +90,11 @@
         color: #aee4ff;
         text-shadow: 0 0 8px #7bc4ff;
       }
-      .tile p { margin: 0; font-size: 16px; opacity: 0.9; }
+      .tile p {
+        margin: 0;
+        font-size: 16px;
+        opacity: 0.9;
+      }
       .report-container {
         margin: 30px auto;
         max-width: 800px;
@@ -125,32 +141,55 @@
 
     <h2>Ваш отчёт готов ✨</h2>
 
-    <p style="font-size:18px;color:#ffe680;text-shadow:0 0 8px rgba(255,230,128,1);margin-bottom:20px;">
-      ⚠️ Ваш персональный отчёт появится на экране сразу, а PDF‑версия будет готова позже.
+    <p
+      style="
+        font-size: 18px;
+        color: #ffe680;
+        text-shadow: 0 0 8px rgba(255, 230, 128, 1);
+        margin-bottom: 20px;
+      "
+    >
+      ⚠️ Ваш персональный отчёт появится на экране сразу, а PDF‑версия будет
+      готова позже.
     </p>
 
     <div id="report-output" class="report-container"></div>
 
-    <p style="font-size:20px;opacity:0.9;margin-bottom:30px;text-align:center;">
+    <p
+      style="
+        font-size: 20px;
+        opacity: 0.9;
+        margin-bottom: 30px;
+        text-align: center;
+      "
+    >
       Выберите, какие разделы вы хотите получить:
     </p>
 
     <div class="tiles-container">
-      <div class="tile" data-type="full"><h3>✨ Полный отчёт</h3><p>Все разделы, энергии, архетипы и совместимость.</p></div>
-      <div class="tile" data-type="personality"><h3>🌿 Личность</h3><p>Ваш характер, энергия, сильные стороны и тени.</p></div>
-      <div class="tile" data-type="soul"><h3>💛 Душа</h3><p>Глубинные мотивы, желания и внутренняя вибрация.</p></div>
-      <div class="tile" data-type="destiny"><h3>🔥 Судьба</h3><p>Путь, задачи, предназначение и жизненная миссия.</p></div>
-      <div class="tile" data-type="shadows"><h3>🌙 Тени</h3><p>Уроки, слабые стороны и то, что важно проработать.</p></div>
-      <div class="tile" data-type="archetypes"><h3>🌸 Архетипы</h3><p>Образы, которые ведут вас по жизни.</p></div>
-      <div class="tile" data-type="year"><h3>🌞 Энергия года</h3><p>Какие вибрации активны в этом году.</p></div>
-      <div class="tile" data-type="month"><h3>🌜 Энергия месяца</h3><p>Текущая динамика и поддерживающие энергии.</p></div>
-      <div class="tile" data-type="karma"><h3>💫 Кармические задачи</h3><p>Опыт прошлых воплощений и уроки души.</p></div>
-      <div class="tile" data-type="partner"><h3>💞 Партнёр</h3><p>Характер, энергия и особенности вашего партнёра.</p></div>
-      <div class="tile" data-type="compatibility"><h3>🔥 Совместимость</h3><p>Как взаимодействуют ваши энергии.</p></div>
-      <div class="tile" data-type="ideal"><h3>🌟 Идеальный партнёр</h3><p>Если партнёр не указан — создадим портрет идеального.</p></div>
+      <div class="tile" data-type="full">
+        <h3>✨ Полный отчёт</h3>
+        <p>Все разделы, энергии, архетипы и совместимость.</p>
+      </div>
+      <div class="tile" data-type="personality">
+        <h3>🌿 Личность</h3>
+        <p>Ваш характер, энергия, сильные стороны и тени.</p>
+      </div>
+      <div class="tile" data-type="soul">
+        <h3>💛 Душа</h3>
+        <p>Глубинные мотивы, желания и внутренняя вибрация.</p>
+      </div>
+      <div class="tile" data-type="destiny">
+        <h3>🔥 Судьба</h3>
+        <p>Путь, задачи, предназначение и жизненная миссия.</p>
+      </div>
+      <div class="tile" data-type="ideal">
+        <h3>🌟 Идеальный партнёр</h3>
+        <p>Если партнёр не указан — создадим портрет идеального.</p>
+      </div>
     </div>
 
-    <div style="margin-top: 30px;">
+    <div style="margin-top: 30px">
       <button id="download-pdf" class="submit-btn">📥 Скачать PDF</button>
     </div>
 
@@ -167,7 +206,7 @@
       function showReport(blocks) {
         const container = document.getElementById("report-output");
         container.innerHTML = "";
-        blocks.forEach(block => {
+        blocks.forEach((block) => {
           const section = document.createElement("div");
           section.innerHTML = `<h3>${block.title}</h3><p>${block.content}</p>`;
           container.appendChild(section);
@@ -179,4 +218,19 @@
         `<h3 style="color:#ffd700;">Добро пожаловать, ${user.name || "Гость"}!</h3>
          <p style="font-size:18px;opacity:0.9;">Ваш отчёт готов. Выберите раздел, который хотите просмотреть.</p>`;
 
-      document.querySelectorAll(".tile").forEach
+      document.querySelectorAll(".tile").forEach((tile) => {
+        tile.addEventListener("click", () => {
+          const type = tile.getAttribute("data-type");
+          const blocks = buildReport(type, user);
+          showReport(blocks);
+          exportToPDF(blocks);
+        });
+      });
+
+      document.getElementById("download-pdf").addEventListener("click", () => {
+        const blocks = buildReport("full", user);
+        exportToPDF(blocks);
+      });
+    </script>
+  </body>
+</html>
