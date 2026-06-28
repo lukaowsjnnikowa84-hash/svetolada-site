@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ваш персональный отчёт — Светолада</title>
+
+    <style>
+      body {
+        margin: 0;
+        font-family: "Segoe UI", sans-serif;
+        background: radial-gradient(
+          circle at 50% 50%,
+          #0b0c10 0%,
+          #000000 100%
+        );
+        color: #ffffff;
+        text-align: center;
+        overflow-x: hidden;
+      }
+
+      /* Логотип */
+      .svetolada-logo {
+        font-family: "Georgia", serif;
+        font-size: 48px;
+        text-align: center;
+        color: #ffd700;
+        letter-spacing: 3px;
+        text-shadow:
+          0 0 12px #ffd700,
+          0 0 22px rgba(255, 240, 200, 0.4);
+        margin-top: 40px;
+        margin-bottom: 10px;
+      }
+
+      /* Анимированные звёзды */
+      .stars {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 200%;
+        height: 200%;
+        background: url("background.png") repeat;
+        background-size: cover;
+        animation: moveStars 40s linear infinite;
+        z-index: -1;
+      }
+
+      @keyframes moveStars {
+        from {
+          transform: translate(0, 0);
+        }
+        to {
+          transform: translate(-50%, 0);
+        }
+      }
+
+      /* Контейнер */
+      .container {
+        max-width: 900px;
+        margin: 40px auto;
+        background: rgba(255, 255, 255, 0.08);
+        padding: 40px;
+        border-radius: 16px;
+        box-shadow: 0 0 25px rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(6px);
+        animation: fadeIn 0.8s ease;
+      }
+
+      h1 {
+        text-align: center;
+        color: #ffd700;
+        text-shadow: 0 0 12px #ffd700;
+        margin-bottom: 35px;
+        font-size: 32px;
+        letter-spacing: 1px;
+      }
+
+      /* Блоки результата */
+      .section {
+        background: rgba(255, 255, 255, 0.12);
+        border-left: 4px solid #ffd700;
+        padding: 18px 22px;
+        margin-bottom: 18px;
+        border-radius: 8px;
+        animation: slideUp 0.6s ease;
+      }
+
+      .section .label {
+        font-weight: bold;
+        color: #ffd700;
+        font-size: 20px;
+        margin-bottom: 6px;
+        text-shadow: 0 0 6px #000;
+      }
+
+      .section .value {
+        color: #ffffff;
+        font-size: 18px;
+        line-height: 1.5;
+      }
+
+      /* Кнопка */
+      .download-btn {
+        display: block;
+        width: 260px;
+        margin: 40px auto 0 auto;
+        padding: 16px 20px;
+        background: #4aa3ff;
+        color: white;
+        border: none;
+        border-radius: 12px;
+        font-size: 22px;
+        cursor: pointer;
+        box-shadow: 0 0 18px rgba(80, 180, 255, 0.8);
+        transition: 0.3s;
+      }
+
+      .download-btn:hover {
+        background: #6bb8ff;
+        box-shadow: 0 0 28px rgba(120, 200, 255, 1);
+        transform: translateY(-2px);
+      }
+
+      /* Анимации */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes slideUp {
+        from {
+          opacity: 0;
+          transform: translateY(15px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="stars"></div>
+
+    <div class="svetolada-logo">Светолада ✨</div>
+
+    <div class="container">
+      <h1>Ваш персональный отчёт</h1>
+
+      <div id="result-sections"></div>
+
+      <button class="download-btn" onclick="downloadPDF()">
+        📥 Скачать PDF
+      </button>
+    </div>
+
+    <script src="/frontend/js/svetoladaTexts.js"></script>
+    <script src="/frontend/js/svetolada_pdf.js"></script>
+    <script src="/frontend/js/result.js"></script>
+    <script src="/frontend/js/analyze.js"></script>
+  </body>
+</html>

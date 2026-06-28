@@ -1,8 +1,37 @@
 {
   "user_data": {
-    "birth_date": "01.01.1990",
-    "birth_time": "12:00",
-    "birth_place": "Москва"
+    "name": "Алина Пример",
+    "birth_date": "14.07.1992",
+    "birth_time": "вечер",
+    "birth_place": "Санкт‑Петербург",
+    "age": 32,
+    "time_accuracy": "range",
+
+    "birth_day": 14,
+    "life_path": 5,
+    "soul": 7,
+    "personality": 3,
+    "destiny": 6,
+    "maturity": 11,
+    "birth_code": 5,
+    "month_energy": 7,
+    "year_energy": 3,
+    "shadow": 4,
+    "karma": 2,
+    "mission": 8,
+    "gift": 3,
+    "talent": 1,
+    "name_vibration": 6,
+    "full_name_number": 6
+  },
+
+  "partner": {
+    "birth_date": "22.03.1990",
+    "birth_time": "утро",
+    "birth_place": "Москва",
+    "age": 34,
+    "time_accuracy": "range",
+    "mode": "medium"
   },
 
   "title": "Отчёт Светолада",
@@ -14,24 +43,12 @@
       "id": 1,
       "block": "Основные вибрации личности",
       "title": "Нумерология",
-      "key": {
-        "Число судьбы": "Описание",
-        "Число души": "Описание"
-      },
-      "strengths": {
-        "Сила характера": "Описание"
-      },
-      "weaknesses": {
-        "Уязвимость": "Описание"
-      },
-      "recommendations": {
-        "Совет": "Описание"
-      },
-      "summary": {
-        "Итог": "Описание"
-      }
+      "key": {},
+      "strengths": {},
+      "weaknesses": {},
+      "recommendations": {},
+      "summary": {}
     },
-
     {
       "id": 2,
       "block": "Основные вибрации личности",
@@ -42,187 +59,10 @@
       "recommendations": {},
       "summary": {}
     },
-
     {
       "id": 3,
       "block": "Основные вибрации личности",
       "title": "Аспекты",
-      "key": {},
-      "strengths": {},
-      "weaknesses": {},
-      "recommendations": {},
-      "summary": {}
-    },
-
-    {
-      "id": 4,
-      "block": "Основные вибрации личности",
-      "title": "Джйотиш",
-      "key": {},
-      "strengths": {},
-      "weaknesses": {},
-      "recommendations": {},
-      "summary": {}
-    },
-
-    {
-      "id": 5,
-      "block": "Карма и путь души",
-      "title": "Карма",
-      "key": {},
-      "strengths": {},
-      "weaknesses": {},
-      "recommendations": {},
-      "summary": {}
-    },
-
-    {
-      "id": 6,
-      "block": "Карма и путь души",
-      "title": "Путь души",
-      "key": {},
-      "strengths": {},
-      "weaknesses": {},
-      "recommendations": {},
-      "summary": {}
-    },
-
-    {
-      "id": 7,
-      "block": "Карма и путь души",
-      "title": "Предназначение",
-      "key": {},
-      "strengths": {},
-      "weaknesses": {},
-      "recommendations": {},
-      "summary": {}
-    },
-
-    {
-      "id": 8,
-      "block": "Психология и внутренний мир",
-      "title": "Психология",
-      "key": {},
-      "strengths": {},
-      "weaknesses": {},
-      "recommendations": {},
-      "summary": {}
-    },
-
-    {
-      "id": 9,
-      "block": "Психология и внутренний мир",
-      "title": "Детство",
-      "key": {},
-      "strengths": {},
-      "weaknesses": {},
-      "recommendations": {},
-      "summary": {}
-    },
-
-    {
-      "id": 10,
-      "block": "Тело, энергия, здоровье",
-      "title": "Аюрведа",
-      "key": {},
-      "strengths": {},
-      "weaknesses": {},
-      "recommendations": {},
-      "summary": {}
-    },
-
-    {
-      "id": 11,
-      "block": "Тело, энергия, здоровье",
-      "title": "Здоровье",
-      "key": {},
-      "strengths": {},
-      "weaknesses": {},
-      "recommendations": {},
-      "summary": {}
-    },
-
-    {
-      "id": 12,
-      "block": "Тело, энергия, здоровье",
-      "title": "Духовные практики",
-      "key": {},
-      "strengths": {},
-      "weaknesses": {},
-      "recommendations": {},
-      "summary": {}
-    },
-
-    {
-      "id": 13,
-      "block": "Реализация в мире",
-      "title": "Таланты",
-      "key": {},
-      "strengths": {},
-      "weaknesses": {},
-      "recommendations": {},
-      "summary": {}
-    },
-
-    {
-      "id": 14,
-      "block": "Реализация в мире",
-      "title": "Профессия",
-      "key": {},
-      "strengths": {},
-      "weaknesses": {},
-      "recommendations": {},
-      "summary": {}
-    },
-
-    {
-      "id": 15,
-      "block": "Реализация в мире",
-      "title": "Финансы",
-      "key": {},
-      "strengths": {},
-      "weaknesses": {},
-      "recommendations": {},
-      "summary": {}
-    },
-
-    {
-      "id": 16,
-      "block": "Отношения и семья",
-      "title": "Любовь (Отношения)",
-      "key": {},
-      "strengths": {},
-      "weaknesses": {},
-      "recommendations": {},
-      "summary": {}
-    },
-
-    {
-      "id": 17,
-      "block": "Отношения и семья",
-      "title": "Семья",
-      "key": {},
-      "strengths": {},
-      "weaknesses": {},
-      "recommendations": {},
-      "summary": {}
-    },
-
-    {
-      "id": 18,
-      "block": "Отношения и семья",
-      "title": "Совместимость",
-      "key": {},
-      "strengths": {},
-      "weaknesses": {},
-      "recommendations": {},
-      "summary": {}
-    },
-
-    {
-      "id": 19,
-      "block": "Время и вывод",
-      "title": "Прогноз",
       "key": {},
       "strengths": {},
       "weaknesses": {},
@@ -233,4 +73,3 @@
 
   "conclusion": "Финальный вывод отчёта Светолада."
 }
-

@@ -2,129 +2,65 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <title>Светолада — Главная</title>
+    <title>Светолада — Персональный анализ</title>
+
+    <link rel="stylesheet" href="/frontend/styles/style.css" />
 
     <style>
-      body {
-        margin: 0;
-        font-family: "Segoe UI", sans-serif;
-        background: radial-gradient(
-          circle at 50% 50%,
-          #0b0c10 0%,
-          #000000 100%
-        );
-        color: #ffffff;
+      .hero {
         text-align: center;
-        overflow-x: hidden;
+        margin-top: 140px;
+        animation: fadeIn 1.2s ease;
       }
 
-      .stars {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 200%;
-        height: 200%;
-        background: url("background.png") repeat;
-        background-size: cover;
-        animation: moveStars 40s linear infinite;
-        z-index: -1;
-      }
-
-      @keyframes moveStars {
-        from {
-          transform: translate(0, 0);
-        }
-        to {
-          transform: translate(-50%, 0);
-        }
-      }
-
-      img.logo {
-        width: 150px;
+      .hero-text {
+        font-size: 26px;
+        color: #3a2f28;
+        text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
         margin-top: 20px;
-        filter: drop-shadow(0 0 14px #ffd700);
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 1.6;
       }
 
-      h1.title {
-        font-size: 58px;
-        margin-top: 20px;
-        color: #ffffff;
-        text-shadow:
-          0 0 14px rgba(255, 255, 255, 0.9),
-          0 0 28px rgba(120, 180, 255, 0.7);
-        letter-spacing: 2px;
-      }
-
-      .main-button {
-        display: inline-block;
-        margin-top: 20px;
-        padding: 16px 36px;
+      .start-btn {
+        margin-top: 40px;
+        padding: 18px 42px;
+        background: #b89c6a;
+        color: white;
+        border: none;
+        border-radius: 14px;
         font-size: 24px;
-        color: #ffffff;
-        background: linear-gradient(90deg, #5aa9f4, #7bc4ff);
-        border-radius: 12px;
-        text-decoration: none;
-        box-shadow: 0 0 18px rgba(90, 169, 244, 0.8);
+        cursor: pointer;
+        box-shadow: 0 0 22px rgba(184, 156, 106, 0.8);
         transition: 0.3s;
       }
 
-      .main-button:hover {
-        box-shadow: 0 0 28px rgba(120, 200, 255, 1);
-        transform: scale(1.05);
-      }
-
-      nav.menu {
-        margin-top: 25px;
-      }
-
-      nav.menu a {
-        color: #ffd700;
-        margin: 0 18px;
-        text-decoration: none;
-        font-size: 24px;
-        text-shadow: 0 0 8px #ffd700;
-      }
-
-      footer {
-        margin-top: 40px;
-        padding: 15px;
-        font-size: 18px;
-        color: #ffe680;
-        text-shadow: 0 0 8px rgba(255, 230, 128, 1);
-      }
-
-      footer a {
-        color: #ffe680;
-        text-decoration: none;
+      .start-btn:hover {
+        background: #a88a58;
+        box-shadow: 0 0 32px rgba(184, 156, 106, 1);
+        transform: translateY(-3px);
       }
     </style>
   </head>
 
   <body>
-    <div class="stars"></div>
+    <div class="svetolada-logo">Светолада ✨</div>
 
-    <img src="icon.png" alt="Логотип Светолада" class="logo" />
+    <div class="hero">
+      <div class="hero-text">
+        Персональный анализ вибраций, пути души, предназначения и энергии
+        рождения.<br />
+        Мягкое путешествие внутрь себя — через числа, архетипы и свет.
+      </div>
 
-    <h1 class="title">Светолада ✨</h1>
-
-    <a href="form.html" class="main-button">Сделать персональный анализ</a>
-
-    <nav class="menu">
-      <a href="index.html">🏠 Главная</a>
-      <a href="analysis.html">✨ Анализ</a>
-      <a href="about.html">🌿 О Светоладе</a>
-    </nav>
-
-    <footer>
-      <a href="privacy.html">Безопасность</a> | © Светолада, 2026 | версия
-      <span id="update-date"></span>
-      <br /><br />
-      Проект создан Людмилой в партнёрстве с ИИ Copilot. 01.07.2026
-    </footer>
-
-    <script>
-      document.getElementById("update-date").textContent =
-        new Date().toLocaleDateString("ru-RU");
-    </script>
+      <button
+        class="start-btn"
+        onclick="location.href = '/frontend/assets/form.html'"
+      >
+        Начать анализ
+      </button>
+    </div>
   </body>
 </html>

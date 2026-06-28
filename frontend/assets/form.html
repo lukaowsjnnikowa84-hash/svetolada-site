@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Светолада — Персональный анализ</title>
+
+    <link rel="stylesheet" href="/frontend/styles/style.css" />
+
+    <style>
+      .form-container {
+        max-width: 700px;
+        margin: 60px auto;
+        background: rgba(255, 255, 255, 0.85);
+        padding: 40px;
+        border-radius: 16px;
+        box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+        animation: fadeIn 0.8s ease;
+      }
+
+      .form-container h2 {
+        text-align: center;
+        color: #b89c6a;
+        font-size: 32px;
+        margin-bottom: 25px;
+      }
+
+      label {
+        display: block;
+        margin-top: 20px;
+        font-size: 18px;
+        color: #5a4a3a;
+      }
+
+      input,
+      select {
+        width: 100%;
+        padding: 12px;
+        margin-top: 8px;
+        border-radius: 8px;
+        border: 1px solid #d2c7b8;
+        font-size: 16px;
+      }
+
+      .submit-btn {
+        margin-top: 30px;
+        width: 100%;
+        padding: 14px;
+        background: #b89c6a;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        font-size: 20px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      .submit-btn:hover {
+        background: #a88a58;
+        transform: translateY(-2px);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="svetolada-logo">Светолада ✨</div>
+
+    <div class="form-container">
+      <h2>Персональный анализ</h2>
+
+      <form id="svetolada-form">
+        <label>Ваше имя</label>
+        <input type="text" name="name" required />
+
+        <label>Дата рождения</label>
+        <input type="date" name="birthdate" required />
+
+        <label>Время рождения</label>
+        <input type="time" name="birthtime" />
+
+        <label>Город рождения</label>
+        <input type="text" name="birthplace" />
+
+        <button class="submit-btn">Получить анализ</button>
+      </form>
+    </div>
+
+    <script src="/frontend/js/form.js"></script>
+  </body>
+</html>

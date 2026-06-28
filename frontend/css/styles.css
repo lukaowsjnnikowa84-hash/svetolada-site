@@ -1,0 +1,144 @@
+/* ============================
+   ФОН СВЕТОЛАДЫ + ТУМАН
+   ============================ */
+
+body {
+  background: url("/generator/resources/cover.png") no-repeat center center
+    fixed;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", sans-serif;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(6px);
+  z-index: -1;
+}
+
+/* ============================
+   ЛОГОТИП СВЕТОЛАДЫ
+   ============================ */
+
+.svetolada-logo {
+  font-family: "Georgia", serif;
+  font-size: 48px;
+  text-align: center;
+  color: #b89c6a;
+  letter-spacing: 3px;
+  text-shadow:
+    0 0 12px #b89c6a,
+    0 0 22px rgba(255, 240, 200, 0.4);
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+/* ============================
+   КОНТЕЙНЕРЫ
+   ============================ */
+
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  background: rgba(255, 255, 255, 0.12);
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(6px);
+  animation: fadeIn 0.8s ease;
+}
+
+h1 {
+  text-align: center;
+  color: #b89c6a;
+  text-shadow: 0 0 12px #b89c6a;
+  margin-bottom: 35px;
+  font-size: 32px;
+  letter-spacing: 1px;
+}
+
+/* ============================
+   БЛОКИ РЕЗУЛЬТАТА
+   ============================ */
+
+.section {
+  background: rgba(255, 255, 255, 0.18);
+  border-left: 4px solid #b89c6a;
+  padding: 18px 22px;
+  margin-bottom: 18px;
+  border-radius: 8px;
+  animation: slideUp 0.6s ease;
+}
+
+.section .label {
+  font-weight: bold;
+  color: #b89c6a;
+  font-size: 20px;
+  margin-bottom: 6px;
+  text-shadow: 0 0 6px #000;
+}
+
+.section .value {
+  color: #3a2f28;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+/* ============================
+   КНОПКИ
+   ============================ */
+
+.download-btn,
+.submit-btn {
+  display: block;
+  width: 260px;
+  margin: 40px auto 0 auto;
+  padding: 16px 20px;
+  background: #b89c6a;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 22px;
+  cursor: pointer;
+  box-shadow: 0 0 18px rgba(184, 156, 106, 0.8);
+  transition: 0.3s;
+}
+
+.download-btn:hover,
+.submit-btn:hover {
+  background: #a88a58;
+  box-shadow: 0 0 28px rgba(184, 156, 106, 1);
+  transform: translateY(-2px);
+}
+
+/* ============================
+   АНИМАЦИИ
+   ============================ */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

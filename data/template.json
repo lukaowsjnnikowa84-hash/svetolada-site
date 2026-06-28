@@ -1,240 +1,43 @@
 {
   "user_data": {
+    "name": "Имя Пример",
     "birth_date": "01.01.1990",
-    "birth_time": "12:00",
-    "birth_place": "Москва"
+    "birth_time": "утро",
+    "birth_place": "Город Пример",
+    "age": 34,
+    "time_accuracy": "range",
+
+    "birth_day": 1,
+    "life_path": 3,
+    "soul": 6,
+    "personality": 4,
+    "destiny": 9,
+    "maturity": 3,
+    "birth_code": 4,
+    "month_energy": 1,
+    "year_energy": 1,
+    "shadow": 6,
+    "karma": 4,
+    "mission": 4,
+    "gift": 9,
+    "talent": 1,
+    "name_vibration": 3,
+    "full_name_number": 9
   },
 
-  "intro": {
-    "title": "Введение",
-    "text": "Это вводный текст отчёта Светолада. Здесь можно описать общую атмосферу, подход и смысл документа."
+  "partner": {
+    "mode": "ideal"
   },
+
+  "title": "Отчёт Светолада",
+
+  "introduction": "Это мягкое, спокойное введение, которое настраивает читателя на документ.",
 
   "sections": [
     {
       "id": 1,
       "block": "Основные вибрации личности",
       "title": "Нумерология",
-      "key": {
-        "Число судьбы": "Описание",
-        "Число души": "Описание"
-      },
-      "strengths": {
-        "Сила характера": "Описание"
-      },
-      "weaknesses": {
-        "Уязвимость": "Описание"
-      },
-      "recommendations": {
-        "Совет": "Описание"
-      },
-      "summary": {
-        "Итог": "Описание"
-      }
-    },
-
-    {
-      "id": 2,
-      "block": "Основные вибрации личности",
-      "title": "Астрология (Солнце — Луна — Асцендент)",
-      "key": {},
-      "strengths": {},
-      "weaknesses": {},
-      "recommendations": {},
-      "summary": {}
-    },
-
-    {
-      "id": 3,
-      "block": "Основные вибрации личности",
-      "title": "Аспекты",
-      "key": {},
-      "strengths": {},
-      "weaknesses": {},
-      "recommendations": {},
-      "summary": {}
-    },
-
-    {
-      "id": 4,
-      "block": "Основные vibrations личности",
-      "title": "Джйотиш",
-      "key": {},
-      "strengths": {},
-      "weaknesses": {},
-      "recommendations": {},
-      "summary": {}
-    },
-
-    {
-      "id": 5,
-      "block": "Карма и путь души",
-      "title": "Карма",
-      "key": {},
-      "strengths": {},
-      "weaknesses": {},
-      "recommendations": {},
-      "summary": {}
-    },
-
-    {
-      "id": 6,
-      "block": "Карма и путь души",
-      "title": "Путь души",
-      "key": {},
-      "strengths": {},
-      "weaknesses": {},
-      "recommendations": {},
-      "summary": {}
-    },
-
-    {
-      "id": 7,
-      "block": "Карма и путь души",
-      "title": "Предназначение",
-      "key": {},
-      "strengths": {},
-      "weaknesses": {},
-      "recommendations": {},
-      "summary": {}
-    },
-
-    {
-      "id": 8,
-      "block": "Психология и внутренний мир",
-      "title": "Психология",
-      "key": {},
-      "strengths": {},
-      "weaknesses": {},
-      "recommendations": {},
-      "summary": {}
-    },
-
-    {
-      "id": 9,
-      "block": "Психология и внутренний мир",
-      "title": "Детство",
-      "key": {},
-      "strengths": {},
-      "weaknesses": {},
-      "recommendations": {},
-      "summary": {}
-    },
-
-    {
-      "id": 10,
-      "block": "Тело, энергия, здоровье",
-      "title": "Аюрведа",
-      "key": {},
-      "strengths": {},
-      "weaknesses": {},
-      "recommendations": {},
-      "summary": {}
-    },
-
-    {
-      "id": 11,
-      "block": "Тело, энергия, здоровье",
-      "title": "Здоровье",
-      "key": {},
-      "strengths": {},
-      "weaknesses": {},
-      "recommendations": {},
-      "summary": {}
-    },
-
-    {
-      "id": 12,
-      "block": "Тело, энергия, здоровье",
-      "title": "Духовные практики",
-      "key": {},
-      "strengths": {},
-      "weaknesses": {},
-      "recommendations": {},
-      "summary": {}
-    },
-
-    {
-      "id": 13,
-      "block": "Реализация в мире",
-      "title": "Таланты",
-      "key": {},
-      "strengths": {},
-      "weaknesses": {},
-      "recommendations": {},
-      "summary": {}
-    },
-
-    {
-      "id": 14,
-      "block": "Реализация в мире",
-      "title": "Профессия",
-      "key": {},
-      "strengths": {},
-      "weaknesses": {},
-      "recommendations": {},
-      "summary": {}
-    },
-
-    {
-      "id": 15,
-      "block": "Реализация в мире",
-      "title": "Финансы",
-      "key": {},
-      "strengths": {},
-      "weaknesses": {},
-      "recommendations": {},
-      "summary": {}
-    },
-
-    {
-      "id": 16,
-      "block": "Отношения и семья",
-      "title": "Любовь (Отношения)",
-      "key": {},
-      "strengths": {},
-      "weaknesses": {},
-      "recommendations": {},
-      "summary": {}
-    },
-
-    {
-      "id": 17,
-      "block": "Отношения и семья",
-      "title": "Семья",
-      "key": {},
-      "strengths": {},
-      "weaknesses": {},
-      "recommendations": {},
-      "summary": {}
-    },
-
-    {
-      "id": 20,
-      "block": "Отношения и семья",
-      "title": "Совместимость",
-      "key": {},
-      "strengths": {},
-      "weaknesses": {},
-      "recommendations": {},
-      "summary": {}
-    },
-
-    {
-      "id": 18,
-      "block": "Время и вывод",
-      "title": "Прогноз",
-      "key": {},
-      "strengths": {},
-      "weaknesses": {},
-      "recommendations": {},
-      "summary": {}
-    },
-
-    {
-      "id": 19,
-      "block": "Время и вывод",
-      "title": "Заключение",
       "key": {},
       "strengths": {},
       "weaknesses": {},
@@ -243,8 +46,5 @@
     }
   ],
 
-  "conclusion": {
-    "title": "Заключение",
-    "text": "Финальный вывод отчёта Светолада."
-  }
+  "conclusion": "Финальный вывод отчёта Светолада."
 }

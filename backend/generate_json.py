@@ -1,5 +1,26 @@
 import json
 import datetime
+from config import DATA_PATH
+
+# Нумерология — подключаем ВСЕ функции
+from backend.numerology import (
+    calculate_life_path,
+    calculate_soul,
+    calculate_personality,
+    calculate_destiny,
+    calculate_maturity,
+    calculate_birth_code,
+    calculate_month_energy,
+    calculate_year_energy,
+    calculate_shadow,
+    calculate_gift,
+    calculate_mission,
+    calculate_karma,
+    calculate_talent,
+    calculate_name_vibration,
+    calculate_full_name_number
+)
+
 
 # ---------------------------------------------------------
 #  Преобразование чисел в слова (утро/день/вечер/ночь)
@@ -104,7 +125,28 @@ def generate_json():
     # -----------------------------
     # ДАННЫЕ ОСНОВНОГО ЧЕЛОВЕКА
     # -----------------------------
+    name = input("Введите имя: ").strip()
     birth_date = input("Введите дату рождения (например 01.01.1990): ").strip()
+
+    # День рождения (для birth_day)
+    birth_day = int(birth_date.split(".")[0])
+
+    # Нумерология — считаем ВСЁ
+    life_path = calculate_life_path(birth_date)
+    soul = calculate_soul(name)
+    personality = calculate_personality(name)
+    destiny = calculate_destiny(name)
+    maturity = calculate_maturity(life_path, destiny)
+    birth_code = calculate_birth_code(birth_date)
+    month_energy = calculate_month_energy(birth_date)
+    year_energy = calculate_year_energy(birth_date)
+    shadow = calculate_shadow(life_path)
+    karma = calculate_karma(birth_code, destiny)
+    mission = calculate_mission(destiny, karma)
+    gift = calculate_gift(life_path, soul)
+    talent = calculate_talent(soul, personality)
+    name_vibration = calculate_name_vibration(name)
+    full_name_number = calculate_full_name_number(name)
 
     print("\nВведите время рождения:")
     print("""
@@ -170,11 +212,30 @@ def generate_json():
 
     data = {
         "user_data": {
+            "name": name,
             "birth_date": birth_date,
             "birth_time": birth_time if birth_time else None,
             "birth_place": birth_place,
             "age": age,
-            "time_accuracy": time_accuracy
+            "time_accuracy": time_accuracy,
+
+            # Нумерология — ВСЕ ЧИСЛА
+            "birth_day": birth_day,
+            "life_path": life_path,
+            "soul": soul,
+            "personality": personality,
+            "destiny": destiny,
+            "maturity": maturity,
+            "birth_code": birth_code,
+            "month_energy": month_energy,
+            "year_energy": year_energy,
+            "shadow": shadow,
+            "karma": karma,
+            "mission": mission,
+            "gift": gift,
+            "talent": talent,
+            "name_vibration": name_vibration,
+            "full_name_number": full_name_number
         },
 
         "partner": partner_data,
@@ -188,19 +249,15 @@ def generate_json():
         "conclusion": "Финальный вывод отчёта Светолада."
     }
 
-    filename = f"svetolada_{birth_date.replace('.', '-')}.json"
+    # -----------------------------
+    # СОХРАНЕНИЕ JSON
+    # -----------------------------
 
-    with open(filename, "w", encoding="utf-8") as f:
+    filename = f"svetolada_{birth_date.replace('.', '-')}.json"
+    full_path = DATA_PATH / filename
+
+    with open(full_path, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
 
-    print(f"\nJSON успешно создан: {filename}")
-
-
-# ---------------------------------------------------------
-#  MAIN
-# ---------------------------------------------------------
-
-if __name__ == "__main__":
-    generate_json()
-
-
+    print(f"\nJSON успешно создан: {full_path}")
+    return filename
