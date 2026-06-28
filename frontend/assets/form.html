@@ -75,10 +75,19 @@
         <input type="date" name="birthdate" required />
 
         <label>Время рождения</label>
-        <input type="time" name="birthtime" />
+        <select name="birthtime_period">
+          <option value="">Не знаю</option>
+          <option value="morning">Утро</option>
+          <option value="day">День</option>
+          <option value="evening">Вечер</option>
+          <option value="night">Ночь</option>
+        </select>
 
         <label>Город рождения</label>
         <input type="text" name="birthplace" />
+
+        <label>Дата рождения партнёра (дд.мм.гггг)</label>
+        <input type="text" name="partner_birthdate" placeholder="дд.мм.гггг" />
 
         <button class="submit-btn">Получить анализ</button>
       </form>

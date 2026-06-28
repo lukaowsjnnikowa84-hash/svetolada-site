@@ -18,7 +18,6 @@
         overflow-x: hidden;
       }
 
-      /* Логотип */
       .svetolada-logo {
         font-family: "Georgia", serif;
         font-size: 48px;
@@ -32,14 +31,13 @@
         margin-bottom: 10px;
       }
 
-      /* Анимированные звёзды */
       .stars {
         position: fixed;
         top: 0;
         left: 0;
         width: 200%;
         height: 200%;
-        background: url("frontend/assets/background.png") repeat;
+        background: url("background.png") repeat;
         background-size: cover;
         animation: moveStars 40s linear infinite;
         z-index: -1;
@@ -54,7 +52,6 @@
         }
       }
 
-      /* Контейнер */
       .container {
         max-width: 900px;
         margin: 40px auto;
@@ -75,7 +72,6 @@
         letter-spacing: 1px;
       }
 
-      /* Блоки результата */
       .section {
         background: rgba(255, 255, 255, 0.12);
         border-left: 4px solid #ffd700;
@@ -99,7 +95,6 @@
         line-height: 1.5;
       }
 
-      /* Кнопка */
       .download-btn {
         display: block;
         width: 260px;
@@ -120,29 +115,6 @@
         box-shadow: 0 0 28px rgba(120, 200, 255, 1);
         transform: translateY(-2px);
       }
-
-      /* Анимации */
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      @keyframes slideUp {
-        from {
-          opacity: 0;
-          transform: translateY(15px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
     </style>
   </head>
 
@@ -161,9 +133,9 @@
       </button>
     </div>
 
-    <script src="./frontend/js/svetoladaTexts.js"></script>
-    <script src="./frontend/js/svetolada_pdf.js"></script>
-    <script src="./frontend/js/result.js"></script>
-    <script src="./frontend/js/analyze.js"></script>
+    <script src="../js/svetoladaTexts.js"></script>
+    <script src="../js/svetolada_pdf.js"></script>
+    <script src="../js/result.js"></script>
+    <script src="../js/analyze.js"></script>
   </body>
 </html>
