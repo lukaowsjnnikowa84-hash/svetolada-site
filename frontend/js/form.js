@@ -7,11 +7,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const data = {
       name: form.name.value.trim(),
       birthdate: form.birthdate.value,
-      birthtime: form.birthtime.value,
+
+      birthtime_exact: form.birthtime_exact.value.trim(),
+      birthtime_period: form.birthtime_period.value,
 
       birthplace: form.birthplace.value.trim(),
-      birthtime_period: form.birthtime_period.value,
-      // партнёр
+
       partner_birthdate: form.partner_birthdate.value.trim(),
     };
 
