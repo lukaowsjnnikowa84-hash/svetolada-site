@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ввод данных для анализа</title>
+
+    <link rel="stylesheet" href="../css/input_data.css" />
+    <script src="../js/input_data.js" defer></script>
+  </head>
+
+  <body>
+    <div class="input-page">
+      <h1 class="page-title">Введите данные для анализа</h1>
+
+      <!-- ДАННЫЕ ПОЛЬЗОВАТЕЛЯ -->
+      <section class="user-section">
+        <h2>Ваши данные</h2>
+
+        <label>Имя:</label>
+        <input type="text" id="user-name" />
+
+        <label>Дата рождения (дд.мм.гггг):</label>
+        <input type="text" id="user-birthdate" placeholder="01.07.1955" />
+
+        <label>Время рождения:</label>
+        <select id="user-time-type">
+          <option value="exact">Точное</option>
+          <option value="approx">Приблизительное</option>
+          <option value="none">Не знаю</option>
+        </select>
+
+        <div id="user-time-exact-block">
+          <label>Точное время (чч:мм):</label>
+          <input type="time" id="user-time-exact" />
+        </div>
+
+        <div id="user-time-approx-block">
+          <label>Приблизительное время:</label>
+          <select id="user-time-approx">
+            <option value="morning">Утро (06:00–11:59)</option>
+            <option value="day">День (12:00–17:59)</option>
+            <option value="evening">Вечер (18:00–22:59)</option>
+            <option value="night">Ночь (23:00–05:59)</option>
+          </select>
+        </div>
+
+        <label>Место рождения:</label>
+        <input
+          type="text"
+          id="user-birthplace"
+          placeholder="село, район, область, страна"
+        />
+      </section>
+
+      <!-- ДАННЫЕ ПАРТНЁРА -->
+      <section class="partner-section">
+        <h2>Данные партнёра (необязательно)</h2>
+
+        <label>Имя партнёра:</label>
+        <input type="text" id="partner-name" />
+
+        <label>Дата рождения партнёра (дд.мм.гггг):</label>
+        <input type="text" id="partner-birthdate" placeholder="27.02.1955" />
+
+        <label>Время рождения партнёра (если есть):</label>
+        <input type="time" id="partner-time" />
+
+        <label>Место рождения партнёра:</label>
+        <input
+          type="text"
+          id="partner-birthplace"
+          placeholder="село, район, область, страна"
+        />
+
+        <p class="hint">
+          Если данные партнёра не указаны — будет показан идеальный партнёр.
+        </p>
+      </section>
+
+      <!-- КНОПКА -->
+      <button id="start-analysis-btn">Приступить к анализу</button>
+
+      <!-- ПРОГРЕСС-БАР -->
+      <div id="progress-block" class="progress-block" style="display: none">
+        <p>Идёт анализ…</p>
+        <div class="progress-bar">
+          <div class="progress-fill"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

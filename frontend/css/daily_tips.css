@@ -1,0 +1,192 @@
+/* --- ЛЁГКИЙ ШУМОВОЙ ФОН (как плёнка, как дождь) --- */
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(to bottom right, #fdf6ec, #f8e9c9);
+  color: #4a3b2f;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+
+  background-image: url("data:image/svg+xml;utf8,\
+    <svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'>\
+    <filter id='noise'>\
+        <feTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3'/>\
+    </filter>\
+    <rect width='100%' height='100%' filter='url(%23noise)' opacity='0.08'/>\
+    </svg>");
+
+  opacity: 0.25;
+  z-index: 1;
+}
+
+/* --- КОНТЕЙНЕР --- */
+
+.daily-tips-page {
+  width: 80%;
+  max-width: 900px;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 20px rgba(200, 180, 120, 0.3);
+  border-radius: 12px;
+  padding: 30px;
+  margin-top: 40px;
+  position: relative;
+  z-index: 2;
+}
+
+/* --- ЗАГОЛОВКИ --- */
+
+.page-title {
+  text-align: center;
+  font-size: 2em;
+  color: #a67c00;
+  margin-bottom: 20px;
+  text-shadow: 0 0 8px rgba(212, 175, 55, 0.3);
+}
+
+.categories-section h2,
+.archive-section h2 {
+  color: #a67c00;
+  border-bottom: 2px solid #d4af37;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+  text-shadow: 0 0 6px rgba(212, 175, 55, 0.25);
+}
+
+/* --- БЛОК СОВЕТА ДНЯ --- */
+
+.main-tip-block {
+  background-color: #fff8e7;
+  border-left: 5px solid #d4af37;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+}
+
+#main-tip {
+  font-size: 1.2em;
+  line-height: 1.5;
+  animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- КНОПКА --- */
+
+#new-tip-btn {
+  background: linear-gradient(135deg, #d4af37, #f1d27a);
+  color: #fff;
+  border: none;
+  padding: 12px 26px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 1.1em;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 10px rgba(212, 175, 55, 0.4);
+  transition: all 0.3s ease;
+  margin-top: 15px;
+}
+
+#new-tip-btn:hover {
+  background: linear-gradient(135deg, #b38b00, #e3c165);
+  box-shadow: 0 6px 14px rgba(212, 175, 55, 0.55);
+  transform: translateY(-2px);
+}
+
+#new-tip-btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 3px 8px rgba(212, 175, 55, 0.35);
+}
+
+/* --- КАТЕГОРИИ --- */
+
+.category-block {
+  margin-bottom: 20px;
+}
+
+.category-block h3 {
+  color: #6b4e16;
+  margin-bottom: 8px;
+}
+
+.category-block ul {
+  list-style-type: "✨ ";
+  padding-left: 20px;
+}
+
+/* --- АНИМАЦИЯ МИНИ-СОВЕТОВ --- */
+
+.category-block li {
+  opacity: 0;
+  animation: fadeInList 0.8s ease forwards;
+}
+
+.category-block li:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.category-block li:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.category-block li:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.category-block li:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.category-block li:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+@keyframes fadeInList {
+  from {
+    opacity: 0;
+    transform: translateX(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* --- АРХИВ --- */
+
+.archive-section {
+  background-color: #f9f3e3;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.15);
+}
+
+#archive-list li {
+  margin-bottom: 6px;
+  padding: 6px 10px;
+  background: rgba(255, 255, 255, 0.6);
+  border-left: 3px solid #d4af37;
+  border-radius: 4px;
+  animation: fadeIn 0.5s ease;
+}

@@ -2,254 +2,162 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <title>О Светоладе</title>
+    <title>Светолада — О системе</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
 
     <style>
       body {
         margin: 0;
-        font-family: "Segoe UI", sans-serif;
-        background: radial-gradient(
-          circle at 50% 50%,
-          #0b0c10 0%,
-          #000000 100%
-        );
-        color: #ffffff;
-        text-align: center;
-        overflow-x: hidden;
+        background: #f7f3ed;
+        font-family: "Inter", sans-serif;
+        color: #4a4a4a;
       }
 
-      .stars {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 200%;
-        height: 200%;
-        background: url("../../generator/resources/background.png") repeat;
-
-        background-size: cover;
-        animation: moveStars 40s linear infinite;
-        z-index: -1;
+      header {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 40px;
+        align-items: center;
       }
 
-      @keyframes moveStars {
-        from {
-          transform: translate(0, 0);
-        }
-        to {
-          transform: translate(-50%, 0);
-        }
-      }
-
-      img.logo {
-        width: 150px;
-        margin-top: 20px;
-        filter: drop-shadow(0 0 14px #ffd700);
-      }
-
-      nav.menu {
-        margin-top: 20px;
-      }
-
-      nav.menu a {
-        color: #ffd700;
-        margin: 0 18px;
-        text-decoration: none;
-        font-size: 24px;
-        text-shadow: 0 0 8px #ffd700;
-      }
-
-      .burger {
-        display: none;
+      .logo {
+        font-family: "Playfair Display", serif;
         font-size: 32px;
-        color: #ffd700;
-        cursor: pointer;
-        margin-top: 20px;
-        text-shadow: 0 0 10px #ffd700;
+        color: #b89c6a;
+        font-weight: 600;
       }
 
-      .overlay {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.75);
-        backdrop-filter: blur(3px);
-        z-index: 10;
-      }
-
-      .popup-menu {
-        display: none;
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background: rgba(20, 20, 20, 0.85);
-        padding: 30px;
-        border-radius: 15px;
-        text-align: center;
-        box-shadow:
-          0 0 25px rgba(255, 215, 0, 0.35),
-          0 0 60px rgba(255, 215, 0, 0.15);
-        z-index: 11;
-        width: 80%;
-        max-width: 300px;
-      }
-
-      .popup-menu a {
-        display: block;
-        margin: 15px 0;
-        font-size: 22px;
-        color: #ffd700;
+      nav a {
+        margin-left: 25px;
         text-decoration: none;
-        text-shadow: 0 0 8px #ffd700;
-      }
-
-      .close-btn {
-        font-size: 26px;
-        color: #ffd700;
-        cursor: pointer;
-        margin-bottom: 10px;
-        text-shadow: 0 0 10px #ffd700;
+        color: #6a6a6a;
+        font-size: 18px;
       }
 
       .container {
-        margin-top: 40px;
-        background: rgba(255, 255, 255, 0.05);
-        padding: 40px;
-        border-radius: 15px;
-        width: 800px;
-        margin-left: auto;
-        margin-right: auto;
-        box-shadow: 0 0 20px rgba(255, 215, 0, 0.25);
-        text-align: left;
-      }
-
-      h1 {
-        text-align: center;
-        font-size: 48px;
-        color: #ffd700;
-        text-shadow: 0 0 14px #ffd700;
-        margin-bottom: 30px;
+        max-width: 900px;
+        margin: 40px auto;
+        padding: 20px;
       }
 
       h2 {
-        color: #ffd700;
-        margin-top: 30px;
-        text-shadow: 0 0 8px #ffd700;
+        font-family: "Playfair Display", serif;
+        font-size: 32px;
+        color: #b89c6a;
+        margin-bottom: 20px;
+        text-align: center;
       }
 
-      p {
+      .text {
         font-size: 20px;
         line-height: 1.7;
-        margin-top: 10px;
+        color: #6a6a6a;
+        margin-bottom: 40px;
+        text-align: center;
+      }
+
+      .block {
+        background: #ffffff;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        margin-bottom: 30px;
+      }
+
+      .block h3 {
+        font-family: "Playfair Display", serif;
+        font-size: 24px;
+        color: #b89c6a;
+        margin-bottom: 15px;
+      }
+
+      .block p {
+        font-size: 18px;
+        color: #6a6a6a;
+        line-height: 1.6;
+      }
+
+      .start-btn {
+        display: block;
+        margin: 40px auto;
+        background-color: #b89c6a;
+        color: white;
+        padding: 16px 32px;
+        border: none;
+        border-radius: 8px;
+        font-size: 20px;
+        cursor: pointer;
+        font-family: "Inter", sans-serif;
       }
 
       footer {
-        margin-top: 50px;
-        padding: 15px;
-        font-size: 18px;
-        color: #ffe680;
-        text-shadow: 0 0 8px rgba(255, 230, 128, 1);
-      }
-
-      @media (max-width: 768px) {
-        nav.menu {
-          display: none;
-        }
-        .burger {
-          display: block;
-        }
-
-        .container {
-          width: 90%;
-          padding: 25px;
-        }
-
-        h1 {
-          font-size: 36px;
-        }
+        text-align: center;
+        margin-top: 80px;
+        font-size: 14px;
+        color: #a89f90;
+        padding-bottom: 40px;
       }
     </style>
   </head>
 
   <body>
-    <div class="stars"></div>
-
-    <img src="icon.png" alt="Логотип Светолада" class="logo" />
-
-    <div class="burger" onclick="openMenu()">☰</div>
-
-    <div class="overlay" onclick="closeMenu()"></div>
-
-    <div class="popup-menu">
-      <div class="close-btn" onclick="closeMenu()">✕</div>
-      <a href="index.html">🏠 Главная</a>
-      <a href="analysis.html">✨ Анализ</a>
-      <a href="about.html">🌿 О Светоладе</a>
-    </div>
-
-    <nav class="menu">
-      <a href="index.html">🏠 Главная</a>
-      <a href="analysis.html">✨ Анализ</a>
-      <a href="about.html">🌿 О Светоладе</a>
-    </nav>
+    <header>
+      <div class="logo">Светолада</div>
+      <nav>
+        <a href="index.html">Главная</a>
+        <a href="analysis.html">Анализ</a>
+        <a href="about.html">О Светоладе</a>
+      </nav>
+    </header>
 
     <div class="container">
-      <h1>О Светоладе ✨</h1>
+      <h2>О Светоладе</h2>
 
-      <p>
-        Светолада — это пространство света, тепла и внутренней гармонии. Проект
-        создан для того, чтобы мягко направлять человека к пониманию себя, своих
-        качеств, особенностей и природных даров.
-      </p>
+      <div class="text">
+        Светолада — это карта души. Она помогает увидеть человека целостно: его
+        характер, эмоции, мышление, волю, родовые программы, предназначение,
+        здоровье, духовность и путь души. Это система, которая раскрывает
+        внутренний свет человека.
+      </div>
 
-      <h2>Миссия</h2>
-      <p>
-        Помогать людям видеть свою внутреннюю красоту, раскрывать потенциал и
-        находить путь к спокойствию и ясности.
-      </p>
+      <div class="block">
+        <h3>Для чего создана Светолада</h3>
+        <p>
+          Чтобы человек мог услышать себя. Гармония начинается там, где человек
+          слышит свой внутренний голос. Светолада помогает услышать этот голос —
+          мягко, бережно, глубоко.
+        </p>
+      </div>
 
-      <h2>Что делает Светолада</h2>
-      <p>
-        ✨ создаёт персональные отчёты ✨ помогает понять сильные стороны ✨
-        мягко направляет к внутреннему равновесию ✨ дарит ощущение света и
-        поддержки
-      </p>
+      <div class="block">
+        <h3>Почему Светолада работает</h3>
+        <p>
+          Она объединяет психологию, архетипы, родовые сценарии, эмоциональные
+          структуры, кармические задачи и путь души. Это не тест и не набор
+          ярлыков — это глубокий анализ внутреннего мира человека.
+        </p>
+      </div>
 
-      <h2>Почему это работает</h2>
-      <p>
-        Потому что каждый человек уникален. И когда он видит свою уникальность —
-        он расцветает.
-      </p>
+      <div class="block">
+        <h3>Кому подходит Светолада</h3>
+        <p>
+          Тем, кто ищет ответы. Тем, кто хочет понять себя. Тем, кто стоит на
+          пороге перемен. Тем, кто хочет увидеть свой путь ясно и спокойно.
+        </p>
+      </div>
 
-      <h2>Контакты</h2>
-      <p>Если у вас есть вопросы или пожелания, вы можете написать:</p>
-
-      <p style="font-size: 22px; color: #ffd700; text-shadow: 0 0 8px #ffd700">
-        ✉ svetolada.contact@gmail.com
-      </p>
+      <button class="start-btn" onclick="window.location.href = 'form.html'">
+        Начать анализ
+      </button>
     </div>
 
     <footer>
-      Обновлено: <span id="update-date"></span> <br /><br />
-      Проект создан Людмилой в партнёрстве с ИИ Copilot. 01.07.2026
+      Светолада © 2026<br />
+      Безопасность данных гарантирована.<br />
+      Разработано с заботой и светом.
     </footer>
-
-    <script>
-      document.getElementById("update-date").textContent =
-        new Date().toLocaleDateString("ru-RU");
-
-      function openMenu() {
-        document.querySelector(".overlay").style.display = "block";
-        document.querySelector(".popup-menu").style.display = "block";
-      }
-
-      function closeMenu() {
-        document.querySelector(".overlay").style.display = "none";
-        document.querySelector(".popup-menu").style.display = "none";
-      }
-    </script>
   </body>
 </html>

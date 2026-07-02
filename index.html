@@ -2,65 +2,95 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <title>Светолада — Персональный анализ</title>
-
-    <link rel="stylesheet" href="frontend/styles/style.css" />
-
+    <title>Светолада — Карта Души</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
     <style>
-      .hero {
+      body {
+        margin: 0;
+        background: #f7f3ed;
+        font-family: "Inter", sans-serif;
+        color: #4a4a4a;
+      }
+      header {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 40px;
+        align-items: center;
+      }
+      .logo {
+        font-family: "Playfair Display", serif;
+        font-size: 32px;
+        color: #b89c6a;
+        font-weight: 600;
+      }
+      nav a {
+        margin-left: 25px;
+        text-decoration: none;
+        color: #6a6a6a;
+        font-size: 18px;
+      }
+      .slogan {
         text-align: center;
-        margin-top: 140px;
-        animation: fadeIn 1.2s ease;
+        margin-top: 120px;
+        font-family: "Playfair Display", serif;
+        font-size: 32px;
+        line-height: 1.4;
       }
-
-      .hero-text {
-        font-size: 26px;
-        color: #3a2f28;
-        text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
-        margin-top: 20px;
-        max-width: 700px;
-        margin-left: auto;
-        margin-right: auto;
-        line-height: 1.6;
+      .slogan span:first-child {
+        color: #b89c6a;
+        font-weight: 600;
       }
-
+      .slogan span:last-child {
+        color: #d8c7a3;
+        font-style: italic;
+      }
       .start-btn {
-        margin-top: 40px;
-        padding: 18px 42px;
-        background: #b89c6a;
+        display: block;
+        margin: 50px auto;
+        background-color: #b89c6a;
         color: white;
+        padding: 16px 32px;
         border: none;
-        border-radius: 14px;
-        font-size: 24px;
+        border-radius: 8px;
+        font-size: 20px;
         cursor: pointer;
-        box-shadow: 0 0 22px rgba(184, 156, 106, 0.8);
-        transition: 0.3s;
+        font-family: "Inter", sans-serif;
       }
-
-      .start-btn:hover {
-        background: #a88a58;
-        box-shadow: 0 0 32px rgba(184, 156, 106, 1);
-        transform: translateY(-3px);
+      footer {
+        text-align: center;
+        margin-top: 120px;
+        font-size: 14px;
+        color: #a89f90;
+        padding-bottom: 40px;
       }
     </style>
   </head>
 
   <body>
-    <div class="svetolada-logo">Светолада ✨</div>
+    <header>
+      <div class="logo">Светолада</div>
+      <nav>
+        <a href="#">Главная</a>
+        <a href="#">Анализ</a>
+        <a href="#">Введение</a>
+        <a href="#">О Светоладе</a>
+      </nav>
+    </header>
 
-    <div class="hero">
-      <div class="hero-text">
-        Персональный анализ вибраций, пути души, предназначения и энергии
-        рождения.<br />
-        Мягкое путешествие внутрь себя — через числа, архетипы и свет.
-      </div>
-
-      <button
-        class="start-btn"
-        onclick="location.href = 'frontend/assets/form.html'"
-      >
-        Начать анализ
-      </button>
+    <div class="slogan">
+      <span>Гармония начинается там, где человек слышит себя.</span><br />
+      <span>Светолада помогает услышать.</span>
     </div>
+
+    <button class="start-btn">Создать персональный отчёт</button>
+
+    <footer>
+      Светолада © 2026<br />
+      Безопасность данных гарантирована.<br />
+      Разработано с заботой и светом.
+    </footer>
   </body>
 </html>

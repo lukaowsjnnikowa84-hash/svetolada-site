@@ -1,61 +1,96 @@
+/*  
+    result.js
+    Логика отображения анализа на странице result.html
+*/
+
+// Получение параметров из URL
+function getUserDataFromURL() {
+  const params = new URLSearchParams(window.location.search);
+
+  return {
+    name: params.get("name"),
+    birthdate: params.get("birthdate"),
+    partner: params.get("partner"),
+  };
+}
+
+// Основной запуск
 document.addEventListener("DOMContentLoaded", () => {
-  const data = JSON.parse(localStorage.getItem("svetolada_user"));
-  const container = document.getElementById("result-sections");
+  const userData = getUserDataFromURL();
 
-  function addSection(label, value) {
-    const div = document.createElement("div");
-    div.className = "section";
-    div.innerHTML = `
-      <div class="label">${label}</div>
-      <div class="value">${value}</div>
-    `;
-    container.appendChild(div);
-  }
+  // Генерация анализа
+  const analysis = generateSvetoladaAnalysis(userData);
 
-  function addHint(text) {
-    const div = document.createElement("div");
-    div.className = "section";
-    div.style.borderLeft = "4px solid #6bb8ff";
-    div.innerHTML = `
-      <div class="label">Подсказка</div>
-      <div class="value">${text}</div>
-    `;
-    container.appendChild(div);
-  }
+  // Сохранение в глобальную переменную
+  window.svetoladaResult = analysis;
 
-  // Основные данные пользователя
-  addSection("Имя", data.name);
-  addSection("Дата рождения", data.birthdate);
+  // Подготовка полного отчёта
+  renderFullReport(analysis);
 
-  // Время рождения — три варианта
-  if (data.birthtime_exact) {
-    addSection("Точное время рождения", data.birthtime_exact);
-  } else if (data.birthtime_period) {
-    const labels = {
-      morning: "Утро",
-      day: "День",
-      evening: "Вечер",
-      night: "Ночь",
-    };
-
-    addSection("Период рождения", labels[data.birthtime_period]);
-    addHint("Анализ будет выполнен по выбранному периоду времени рождения.");
-  } else {
-    addSection("Время рождения", "не указано");
-    addHint(
-      "Разделы, связанные с точным временем рождения, будут отсутствовать.",
-    );
-  }
-
-  addSection("Город рождения", data.birthplace || "не указано");
-
-  // Партнёр
-  if (data.partner_birthdate) {
-    addSection("Дата рождения партнёра", data.partner_birthdate);
-  } else {
-    addSection("Идеальный партнёр", "Будет подобран автоматически ✨");
-    addHint(
-      "Поскольку дата рождения партнёра не указана, будет показан идеальный партнёр.",
-    );
-  }
+  // Подготовка разделов
+  renderSections(analysis);
 });
+
+/*  
+    Полный отчёт
+*/
+function renderFullReport(analysis) {
+  const fullTextBlock = document.getElementById("fullText");
+
+  let html = "";
+
+  for (let i = 1; i <= 27; i++) {
+    html += `
+            <h3 style="color:#B89C6A; font-family:'Playfair Display', serif; margin-top:30px;">
+                ${analysis.sections[i].title}
+            </h3>
+            <p style="font-size:18px; line-height:1.6; color:#4A4A4A;">
+                ${analysis.sections[i].text}
+            </p>
+        `;
+  }
+
+  fullTextBlock.innerHTML = html;
+}
+
+/*  
+    Разделы по карточкам
+*/
+function renderSections(analysis) {
+  const cards = document.querySelectorAll(".section-card");
+
+  cards.forEach((card, index) => {
+    card.addEventListener("click", () => {
+      const sectionNumber = index + 1;
+      openSection(sectionNumber, analysis);
+    });
+  });
+}
+
+/*  
+    Открытие отдельного раздела
+*/
+function openSection(num, analysis) {
+  const fullReport = document.getElementById("full-report");
+  const sectionsBlock = document.getElementById("sections");
+  const fullTextBlock = document.getElementById("fullText");
+
+  fullReport.style.display = "block";
+  sectionsBlock.style.display = "none";
+
+  fullTextBlock.innerHTML = `
+        <h3 style="color:#B89C6A; font-family:'Playfair Display', serif; margin-top:30px;">
+            ${analysis.sections[num].title}
+        </h3>
+        <p style="font-size:18px; line-height:1.6; color:#4A4A4A;">
+            ${analysis.sections[num].text}
+        </p>
+    `;
+}
+
+/*  
+    Скачивание PDF
+*/
+function downloadPDF() {
+  window.location.href = "download.html";
+}

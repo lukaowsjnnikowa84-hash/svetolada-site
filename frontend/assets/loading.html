@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Светолада — Подготовка анализа</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        margin: 0;
+        background: #f7f3ed;
+        font-family: "Inter", sans-serif;
+        color: #4a4a4a;
+        text-align: center;
+      }
+
+      .container {
+        margin-top: 140px;
+      }
+
+      h2 {
+        font-family: "Playfair Display", serif;
+        font-size: 28px;
+        color: #b89c6a;
+        margin-bottom: 40px;
+      }
+
+      .progress-bar {
+        width: 60%;
+        height: 14px;
+        background: #e8e0d4;
+        border-radius: 10px;
+        margin: 0 auto;
+        overflow: hidden;
+      }
+
+      .progress-fill {
+        height: 100%;
+        width: 0%;
+        background: linear-gradient(90deg, #b89c6a, #d8c7a3);
+        border-radius: 10px;
+        animation: loading 4s ease-in-out forwards;
+      }
+
+      @keyframes loading {
+        from {
+          width: 0%;
+        }
+        to {
+          width: 100%;
+        }
+      }
+
+      .text {
+        margin-top: 30px;
+        font-size: 18px;
+        color: #6a6a6a;
+      }
+    </style>
+
+    <script>
+      // Автоматический переход на страницу результата
+      setTimeout(function () {
+        window.location.href = "result.html";
+      }, 4200);
+    </script>
+  </head>
+
+  <body>
+    <div class="container">
+      <h2>Идёт подготовка вашего анализа…</h2>
+
+      <div class="progress-bar">
+        <div class="progress-fill"></div>
+      </div>
+
+      <div class="text">
+        Пожалуйста, подождите несколько секунд.<br />
+        Ваш персональный отчёт почти готов.
+      </div>
+    </div>
+  </body>
+</html>

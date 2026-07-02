@@ -2,105 +2,123 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <title>Анализ — Светолада</title>
+    <title>Светолада — Анализ</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+
     <style>
       body {
         margin: 0;
-        font-family: "Segoe UI", sans-serif;
-        background: radial-gradient(
-          circle at 50% 50%,
-          #0b0c10 0%,
-          #000000 100%
-        );
-        color: #ffffff;
-        text-align: center;
-        overflow-x: hidden;
+        background: #f7f3ed;
+        font-family: "Inter", sans-serif;
+        color: #4a4a4a;
       }
-      .stars {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 200%;
-        height: 200%;
-        background: url("background.png") repeat;
-        background-size: cover;
-        animation: moveStars 40s linear infinite;
-        z-index: -1;
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 40px;
+        align-items: center;
       }
-      @keyframes moveStars {
-        from {
-          transform: translate(0, 0);
-        }
-        to {
-          transform: translate(-50%, 0);
-        }
+
+      .logo {
+        font-family: "Playfair Display", serif;
+        font-size: 32px;
+        color: #b89c6a;
+        font-weight: 600;
       }
-      h2 {
-        margin-top: 30px;
-        color: #ffd700;
-        text-shadow: 0 0 12px #ffd700;
-        font-size: 38px;
-      }
-      p,
-      ul {
-        max-width: 800px;
-        margin: 20px auto;
-        font-size: 20px;
-        line-height: 1.6;
-        text-align: left;
-      }
-      ul {
-        list-style: none;
-        padding: 0;
-      }
-      ul li {
-        margin: 8px 0;
-      }
-      footer {
-        margin-top: 40px;
-        padding: 15px;
+
+      nav a {
+        margin-left: 25px;
+        text-decoration: none;
+        color: #6a6a6a;
         font-size: 18px;
-        color: #ffe680;
-        text-shadow: 0 0 6px #000;
+      }
+
+      .container {
+        max-width: 900px;
+        margin: 40px auto;
+        padding: 20px;
+      }
+
+      h2 {
+        font-family: "Playfair Display", serif;
+        font-size: 32px;
+        color: #b89c6a;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      .text {
+        font-size: 20px;
+        line-height: 1.7;
+        color: #6a6a6a;
+        margin-bottom: 40px;
+        text-align: center;
+      }
+
+      .start-btn {
+        display: block;
+        margin: 40px auto;
+        background-color: #b89c6a;
+        color: white;
+        padding: 16px 32px;
+        border: none;
+        border-radius: 8px;
+        font-size: 20px;
+        cursor: pointer;
+        font-family: "Inter", sans-serif;
+      }
+
+      footer {
+        text-align: center;
+        margin-top: 80px;
+        font-size: 14px;
+        color: #a89f90;
+        padding-bottom: 40px;
       }
     </style>
   </head>
+
   <body>
-    <div class="stars"></div>
+    <header>
+      <div class="logo">Светолада</div>
+      <nav>
+        <a href="index.html">Главная</a>
+        <a href="analysis.html">Анализ</a>
+        <a href="about.html">О Светоладе</a>
+      </nav>
+    </header>
 
-    <h2>Анализ выполняется по направлениям:</h2>
-    <ul>
-      <li>🔢 Нумерология</li>
-      <li>🌞 Астрология</li>
-      <li>🌿 Ведическая астрология (джйотиш)</li>
-      <li>💛 Аюрведа</li>
-      <li>🌀 Психология</li>
-    </ul>
+    <div class="container">
+      <h2>Введение</h2>
 
-    <p>
-      Для анализа используются ваши персональные данные:<br />
-      • <b>Дата рождения</b> — формат дд.мм.гггг<br />
-      • <b>Время рождения</b> — можно задать точно (чч:мм), выбрать период
-      (утро, день, вечер, ночь), или не задавать вовсе. Если время не указано —
-      анализ всё равно будет выполнен, но некоторые моменты будут исключены.<br />
-      • <b>Место рождения</b> — можно указать город/страну. Задание этого
-      показателя повышает точность анализа.
-    </p>
+      <div class="text">
+        Светолада — это карта души. Она помогает увидеть внутренний мир человека
+        целостно: характер, эмоции, мышление, волю, родовые программы,
+        предназначение, здоровье, духовность и путь души. Это не тест и не набор
+        ярлыков — это глубокий анализ внутреннего света человека.
+      </div>
 
-    <p>
-      Для анализа совместимости с партнёром нужно указать его (её)
-      <b>дату рождения</b> в формате дд.мм.гггг. Если партнёр не указан — анализ
-      будет выполнен, и система покажет
-      <b>портрет идеального для вас партнёра</b>.
-    </p>
+      <h2>О Светоладе</h2>
 
-    <h3 style="color: #ffe680; text-shadow: 0 0 6px #000; margin-top: 40px">
-      🌸 Приятного просмотра!
-    </h3>
+      <div class="text">
+        Светолада создана для того, чтобы человек мог услышать себя. Гармония
+        начинается там, где человек слышит свой внутренний голос. Светолада
+        помогает услышать.
+      </div>
+
+      <button class="start-btn" onclick="window.location.href = 'form.html'">
+        Начать анализ
+      </button>
+    </div>
 
     <footer>
-      Проект создан Людмилой в партнёрстве с ИИ Copilot. 01.07.2026
+      Светолада © 2026<br />
+      Безопасность данных гарантирована.<br />
+      Разработано с заботой и светом.
     </footer>
-    <script src="../js/analyze.js"></script>
   </body>
 </html>

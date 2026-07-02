@@ -1,10 +1,9 @@
-# backend/routes/generate_pdf.py
+# routes/generate_pdf.py
 
 from flask import Blueprint, request, jsonify
 from generator.pdf_builder import create_pdf
 import os
 import uuid
-import logging
 
 generate_pdf_bp = Blueprint("generate_pdf", __name__)
 
@@ -13,20 +12,12 @@ def generate_pdf():
     try:
         data = request.get_json()
 
-        if not data:
-            logging.error("Пустой запрос на генерацию PDF")
-            return jsonify({"status": "error", "message": "Нет данных"}), 400
-
-        logging.info(f"Получены данные для PDF: {data}")
-
-        # Генерация имени файла
+        # Генерация уникального имени файла
         pdf_name = f"{uuid.uuid4()}.pdf"
         pdf_path = os.path.join("pdf", pdf_name)
 
         # Создание PDF
         create_pdf(data, pdf_path)
-
-        logging.info(f"PDF успешно создан: {pdf_path}")
 
         return jsonify({
             "status": "ok",
@@ -34,9 +25,8 @@ def generate_pdf():
         })
 
     except Exception as e:
-        logging.error(f"Ошибка генерации PDF: {e}")
+        print("PDF generation error:", e)
         return jsonify({
             "status": "error",
             "message": str(e)
-        }), 500
-
+        })

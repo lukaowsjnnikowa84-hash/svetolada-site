@@ -2,100 +2,119 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <title>Светолада — Персональный анализ</title>
-
-    <link rel="stylesheet" href="../styles/style.css" />
-
+    <title>Светолада — Ввод данных</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
     <style>
-      .form-container {
-        max-width: 700px;
-        margin: 60px auto;
-        background: rgba(255, 255, 255, 0.85);
-        padding: 40px;
-        border-radius: 16px;
-        box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
-        animation: fadeIn 0.8s ease;
+      body {
+        margin: 0;
+        background: #f7f3ed;
+        font-family: "Inter", sans-serif;
+        color: #4a4a4a;
       }
-
+      header {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 40px;
+        align-items: center;
+      }
+      .logo {
+        font-family: "Playfair Display", serif;
+        font-size: 32px;
+        color: #b89c6a;
+        font-weight: 600;
+      }
+      nav a {
+        margin-left: 25px;
+        text-decoration: none;
+        color: #6a6a6a;
+        font-size: 18px;
+      }
+      .form-container {
+        max-width: 480px;
+        margin: 80px auto;
+        background: #ffffff;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      }
       .form-container h2 {
         text-align: center;
+        font-family: "Playfair Display", serif;
         color: #b89c6a;
-        font-size: 32px;
-        margin-bottom: 25px;
+        margin-bottom: 30px;
+        font-size: 28px;
       }
-
       label {
         display: block;
-        margin-top: 20px;
-        font-size: 18px;
-        color: #5a4a3a;
+        margin-bottom: 8px;
+        font-size: 16px;
+        color: #6a6a6a;
       }
-
-      input,
-      select {
+      input {
         width: 100%;
         padding: 12px;
-        margin-top: 8px;
+        margin-bottom: 20px;
+        border: 1px solid #d8c7a3;
         border-radius: 8px;
-        border: 1px solid #d2c7b8;
         font-size: 16px;
+        background: #faf7f2;
       }
-
       .submit-btn {
-        margin-top: 30px;
         width: 100%;
-        padding: 14px;
-        background: #b89c6a;
+        background-color: #b89c6a;
         color: white;
+        padding: 14px;
         border: none;
-        border-radius: 10px;
-        font-size: 20px;
+        border-radius: 8px;
+        font-size: 18px;
         cursor: pointer;
-        transition: 0.3s;
+        margin-top: 10px;
       }
-
-      .submit-btn:hover {
-        background: #a88a58;
-        transform: translateY(-2px);
+      footer {
+        text-align: center;
+        margin-top: 80px;
+        font-size: 14px;
+        color: #a89f90;
+        padding-bottom: 40px;
       }
     </style>
   </head>
 
   <body>
-    <div class="svetolada-logo">Светолада ✨</div>
+    <header>
+      <div class="logo">Светолада</div>
+      <nav>
+        <a href="index.html">Главная</a>
+        <a href="#">Анализ</a>
+        <a href="#">Введение</a>
+        <a href="#">О Светоладе</a>
+      </nav>
+    </header>
 
     <div class="form-container">
-      <h2>Персональный анализ</h2>
+      <h2>Введите данные для анализа</h2>
 
-      <form id="svetolada-form">
+      <form action="loading.html" method="GET">
         <label>Ваше имя</label>
-        <input type="text" name="name" required />
+        <input type="text" name="name" placeholder="Например: Анна" required />
 
         <label>Дата рождения</label>
         <input type="date" name="birthdate" required />
 
-        <label>Точное время рождения (чч:мм)</label>
-        <input type="time" name="birthtime_exact" />
-
-        <label>Период рождения</label>
-        <select name="birthtime_period">
-          <option value="">Не знаю</option>
-          <option value="morning">Утро</option>
-          <option value="day">День</option>
-          <option value="evening">Вечер</option>
-          <option value="night">Ночь</option>
-        </select>
-
-        <label>Город рождения</label>
-        <input type="text" name="birthplace" />
-
-        <label>Дата рождения партнёра (дд.мм.гггг)</label>
-        <input type="text" name="partner_birthdate" placeholder="дд.мм.гггг" />
+        <label>Данные партнёра (необязательно)</label>
+        <input type="text" name="partner" placeholder="Имя партнёра" />
 
         <button class="submit-btn">Получить анализ</button>
       </form>
     </div>
 
-    <script src="../js/form.js"></script>
+    <footer>
+      Светолада © 2026<br />
+      Безопасность данных гарантирована.<br />
+      Разработано с заботой и светом.
+    </footer>
   </body>
 </html>

@@ -2,140 +2,228 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <title>Ваш персональный отчёт — Светолада</title>
+    <title>Светолада — Ваш анализ</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
 
     <style>
       body {
         margin: 0;
-        font-family: "Segoe UI", sans-serif;
-        background: radial-gradient(
-          circle at 50% 50%,
-          #0b0c10 0%,
-          #000000 100%
-        );
-        color: #ffffff;
-        text-align: center;
-        overflow-x: hidden;
+        background: #f7f3ed;
+        font-family: "Inter", sans-serif;
+        color: #4a4a4a;
       }
 
-      .svetolada-logo {
-        font-family: "Georgia", serif;
-        font-size: 48px;
-        text-align: center;
-        color: #ffd700;
-        letter-spacing: 3px;
-        text-shadow:
-          0 0 12px #ffd700,
-          0 0 22px rgba(255, 240, 200, 0.4);
-        margin-top: 40px;
-        margin-bottom: 10px;
+      header {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 40px;
+        align-items: center;
       }
 
-      .stars {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 200%;
-        height: 200%;
-        background: url("background.png") repeat;
-        background-size: cover;
-        animation: moveStars 40s linear infinite;
-        z-index: -1;
+      .logo {
+        font-family: "Playfair Display", serif;
+        font-size: 32px;
+        color: #b89c6a;
+        font-weight: 600;
       }
 
-      @keyframes moveStars {
-        from {
-          transform: translate(0, 0);
-        }
-        to {
-          transform: translate(-50%, 0);
-        }
+      nav a {
+        margin-left: 25px;
+        text-decoration: none;
+        color: #6a6a6a;
+        font-size: 18px;
       }
 
       .container {
         max-width: 900px;
         margin: 40px auto;
-        background: rgba(255, 255, 255, 0.08);
-        padding: 40px;
-        border-radius: 16px;
-        box-shadow: 0 0 25px rgba(255, 255, 255, 0.15);
-        backdrop-filter: blur(6px);
-        animation: fadeIn 0.8s ease;
+        padding: 20px;
       }
 
-      h1 {
+      h2 {
+        font-family: "Playfair Display", serif;
+        font-size: 30px;
+        color: #b89c6a;
         text-align: center;
-        color: #ffd700;
-        text-shadow: 0 0 12px #ffd700;
-        margin-bottom: 35px;
-        font-size: 32px;
-        letter-spacing: 1px;
+        margin-bottom: 20px;
       }
 
-      .section {
-        background: rgba(255, 255, 255, 0.12);
-        border-left: 4px solid #ffd700;
-        padding: 18px 22px;
-        margin-bottom: 18px;
-        border-radius: 8px;
-        animation: slideUp 0.6s ease;
-      }
-
-      .section .label {
-        font-weight: bold;
-        color: #ffd700;
-        font-size: 20px;
-        margin-bottom: 6px;
-        text-shadow: 0 0 6px #000;
-      }
-
-      .section .value {
-        color: #ffffff;
+      .intro {
+        text-align: center;
         font-size: 18px;
-        line-height: 1.5;
+        color: #6a6a6a;
+        margin-bottom: 40px;
       }
 
-      .download-btn {
-        display: block;
-        width: 260px;
-        margin: 40px auto 0 auto;
-        padding: 16px 20px;
-        background: #4aa3ff;
+      .buttons {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      .btn {
+        background-color: #b89c6a;
         color: white;
+        padding: 14px 28px;
         border: none;
-        border-radius: 12px;
-        font-size: 22px;
+        border-radius: 8px;
+        font-size: 18px;
         cursor: pointer;
-        box-shadow: 0 0 18px rgba(80, 180, 255, 0.8);
-        transition: 0.3s;
+        margin: 10px;
       }
 
-      .download-btn:hover {
-        background: #6bb8ff;
-        box-shadow: 0 0 28px rgba(120, 200, 255, 1);
-        transform: translateY(-2px);
+      .sections {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+        margin-top: 40px;
+      }
+
+      .section-card {
+        background: #ffffff;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        cursor: pointer;
+        transition: 0.3s;
+        border-left: 6px solid #d8c7a3;
+      }
+
+      .section-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+      }
+
+      .section-card h3 {
+        margin: 0;
+        font-size: 18px;
+        color: #b89c6a;
+        font-family: "Playfair Display", serif;
+      }
+
+      footer {
+        text-align: center;
+        margin-top: 80px;
+        font-size: 14px;
+        color: #a89f90;
+        padding-bottom: 40px;
       }
     </style>
   </head>
 
   <body>
-    <div class="stars"></div>
-
-    <div class="svetolada-logo">Светолада ✨</div>
+    <header>
+      <div class="logo">Светолада</div>
+      <nav>
+        <a href="index.html">Главная</a>
+        <a href="#">Анализ</a>
+        <a href="#">Введение</a>
+        <a href="#">О Светоладе</a>
+      </nav>
+    </header>
 
     <div class="container">
-      <h1>Ваш персональный отчёт</h1>
+      <h2>Ваш персональный анализ готов</h2>
 
-      <div id="result-sections"></div>
+      <div class="intro">
+        Выберите способ просмотра: полный отчёт или отдельные разделы.
+      </div>
 
-      <button class="download-btn" onclick="downloadPDF()">
-        📥 Скачать PDF
-      </button>
+      <div class="buttons">
+        <button class="btn" onclick="showFull()">Полный отчёт</button>
+        <button class="btn" onclick="showSections()">По разделам</button>
+        <button class="btn" onclick="downloadPDF()">Скачать PDF</button>
+      </div>
+
+      <div id="full-report" style="display: none; margin-top: 40px">
+        <h2>Полный отчёт</h2>
+        <div
+          id="fullText"
+          style="font-size: 18px; line-height: 1.6; color: #4a4a4a"
+        >
+          <!-- Здесь будет полный текст анализа -->
+        </div>
+      </div>
+
+      <div id="sections" style="display: none">
+        <div class="sections">
+          <div class="section-card"><h3>1. Характер</h3></div>
+          <div class="section-card"><h3>2. Эмоции</h3></div>
+          <div class="section-card"><h3>3. Мышление</h3></div>
+          <div class="section-card"><h3>4. Воля</h3></div>
+          <div class="section-card"><h3>5. Темперамент</h3></div>
+          <div class="section-card"><h3>6. Общение и социальные связи</h3></div>
+          <div class="section-card"><h3>7. Отношения и близость</h3></div>
+          <div class="section-card"><h3>8. Любовь и партнёрство</h3></div>
+          <div class="section-card"><h3>9. Семья и родовые сценарии</h3></div>
+          <div class="section-card">
+            <h3>10. Род и наследственные программы</h3>
+          </div>
+          <div class="section-card">
+            <h3>11. Детство и формирование личности</h3>
+          </div>
+          <div class="section-card"><h3>12. Травмы и точки роста</h3></div>
+          <div class="section-card">
+            <h3>13. Предназначение и путь реализации</h3>
+          </div>
+          <div class="section-card">
+            <h3>14. Таланты и внутренние ресурсы</h3>
+          </div>
+          <div class="section-card"><h3>15. Работа и самореализация</h3></div>
+          <div class="section-card">
+            <h3>16. Финансовая энергия и поток изобилия</h3>
+          </div>
+          <div class="section-card"><h3>17. Здоровье и жизненная сила</h3></div>
+          <div class="section-card"><h3>18. Психосоматика и тело души</h3></div>
+          <div class="section-card"><h3>19. Кризисы и трансформации</h3></div>
+          <div class="section-card">
+            <h3>20. Жизненные циклы и этапы пути</h3>
+          </div>
+          <div class="section-card">
+            <h3>21. Партнёрство и совместный путь</h3>
+          </div>
+          <div class="section-card"><h3>22. Дети и родовая линия</h3></div>
+          <div class="section-card">
+            <h3>23. Дом и энергия пространства</h3>
+          </div>
+          <div class="section-card">
+            <h3>24. Духовность и связь с высшим</h3>
+          </div>
+          <div class="section-card">
+            <h3>25. Энергетический потенциал и защита</h3>
+          </div>
+          <div class="section-card">
+            <h3>26. Кармические задачи и уроки души</h3>
+          </div>
+          <div class="section-card">
+            <h3>27. Итоговая картина личности и путь души</h3>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <script src="../js/svetoladaTexts.js"></script>
-    <script src="../js/svetolada_pdf.js"></script>
-    <script src="../js/result.js"></script>
-    <script src="../js/analyze.js"></script>
+    <footer>
+      Светолада © 2026<br />
+      Безопасность данных гарантирована.<br />
+      Разработано с заботой и светом.
+    </footer>
+
+    <script>
+      function showFull() {
+        document.getElementById("full-report").style.display = "block";
+        document.getElementById("sections").style.display = "none";
+      }
+
+      function showSections() {
+        document.getElementById("sections").style.display = "block";
+        document.getElementById("full-report").style.display = "none";
+      }
+
+      function downloadPDF() {
+        window.location.href = "download.html";
+      }
+    </script>
   </body>
 </html>

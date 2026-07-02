@@ -38,14 +38,20 @@ svetolada-site/
 
 ## 🖼 Подключение ресурсов
 
-HTML‑страницы лежат в `frontend/assets/`,  
-картинки — в `generator/resources/`.
+HTML‑страницы лежат в:
 
-Пример правильного пути:
+frontend/assets/
+
+Картинки — в:
+
+generator/resources/
+
+Пример правильного пути в CSS:
 
 ```css
 background: url("../../generator/resources/background.png");
-JS‑файлы подключаются так:
+Подключение JS‑файлов:
+
 <script src="../js/result.js"></script>
 🚀 Запуск проекта
 1. Установка зависимостей backend
@@ -59,10 +65,12 @@ http://localhost:5000
 frontend/assets/index.html
 📄 Генерация PDF
 Фронтенд отправляет запрос:
-fetch("http://localhost:5000/generate", {
+
+fetch("http://localhost:5000/generate_pdf", {
   method: "POST",
+  headers: { "Content-Type": "application/json" },
   body: JSON.stringify(data)
-})
+});
 Backend формирует PDF с использованием шаблонов из:
 generator/templates/
 🌸 Автор проекта
@@ -70,6 +78,8 @@ generator/templates/
 в партнёрстве с ИИ Copilot.
 
 2026 год.
+
 💛 Миссия Светолады
 Дарить человеку ощущение света, тепла, ясности и внутренней гармонии.
+
 ```
