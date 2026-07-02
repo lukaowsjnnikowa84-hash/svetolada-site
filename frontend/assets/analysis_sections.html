@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Разделы отчёта — Светолада</title>
+
+    <link rel="stylesheet" href="../css/analysis_sections.css" />
+  </head>
+
+  <body>
+    <div class="sections-page">
+      <h1 class="title">Выберите раздел отчёта</h1>
+
+      <p class="intro">
+        Позже мы добавим сюда 21 раздел Светолады.<br />
+        Сейчас — тестовая структура.
+      </p>
+
+      <ul class="sections-list">
+        <li onclick="openSection('Личность')">Личность</li>
+        <li onclick="openSection('Душа')">Душа</li>
+        <li onclick="openSection('Судьба')">Судьба</li>
+        <li onclick="openSection('Идеальный партнёр')">Идеальный партнёр</li>
+        <li onclick="openSection('Психология')">Психология</li>
+        <li onclick="openSection('Совместимость')">Совместимость</li>
+        <li onclick="openSection('Энергия дня')">Энергия дня</li>
+      </ul>
+
+      <div id="section-content" class="section-content">
+        Выберите раздел, чтобы увидеть его содержимое.
+      </div>
+
+      <div class="buttons">
+        <button onclick="alert('PDF будет доступен позже')">Скачать PDF</button>
+        <button onclick="window.location.href = 'index.html'">
+          Вернуться на главную
+        </button>
+      </div>
+    </div>
+
+    <script>
+      function openSection(name) {
+        document.getElementById("section-content").innerHTML =
+          "<h2>" +
+          name +
+          "</h2>" +
+          "<p>Здесь будет текст раздела «" +
+          name +
+          "». Позже мы добавим настоящий анализ.</p>";
+      }
+    </script>
+  </body>
+</html>

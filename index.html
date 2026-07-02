@@ -2,95 +2,46 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <title>Светолада — Карта Души</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      body {
-        margin: 0;
-        background: #f7f3ed;
-        font-family: "Inter", sans-serif;
-        color: #4a4a4a;
-      }
-      header {
-        display: flex;
-        justify-content: space-between;
-        padding: 20px 40px;
-        align-items: center;
-      }
-      .logo {
-        font-family: "Playfair Display", serif;
-        font-size: 32px;
-        color: #b89c6a;
-        font-weight: 600;
-      }
-      nav a {
-        margin-left: 25px;
-        text-decoration: none;
-        color: #6a6a6a;
-        font-size: 18px;
-      }
-      .slogan {
-        text-align: center;
-        margin-top: 120px;
-        font-family: "Playfair Display", serif;
-        font-size: 32px;
-        line-height: 1.4;
-      }
-      .slogan span:first-child {
-        color: #b89c6a;
-        font-weight: 600;
-      }
-      .slogan span:last-child {
-        color: #d8c7a3;
-        font-style: italic;
-      }
-      .start-btn {
-        display: block;
-        margin: 50px auto;
-        background-color: #b89c6a;
-        color: white;
-        padding: 16px 32px;
-        border: none;
-        border-radius: 8px;
-        font-size: 20px;
-        cursor: pointer;
-        font-family: "Inter", sans-serif;
-      }
-      footer {
-        text-align: center;
-        margin-top: 120px;
-        font-size: 14px;
-        color: #a89f90;
-        padding-bottom: 40px;
-      }
-    </style>
+    <title>Светолада — Главная</title>
+
+    <link rel="stylesheet" href="../css/main.css" />
   </head>
 
   <body>
-    <header>
-      <div class="logo">Светолада</div>
-      <nav>
-        <a href="#">Главная</a>
-        <a href="#">Анализ</a>
-        <a href="#">Введение</a>
-        <a href="#">О Светоладе</a>
+    <div class="background"></div>
+
+    <header class="main-header">
+      <div class="logo-block">
+        <img src="../img/logo.png" alt="Светолада" class="logo-img" />
+        <div class="logo-text">Светолада</div>
+      </div>
+
+      <nav class="main-menu">
+        <a href="index.html">Главная</a>
+        <a href="about_analysis.html">Об анализе</a>
+        <a href="about_svetolada.html">О Светоладе</a>
+        <a href="daily_tips.html">Советы на каждый день</a>
       </nav>
     </header>
 
-    <div class="slogan">
-      <span>Гармония начинается там, где человек слышит себя.</span><br />
-      <span>Светолада помогает услышать.</span>
-    </div>
+    <main class="main-content">
+      <h1 class="slogan">
+        Гармония начинается там, где человек слышит себя.<br />
+        Светолада помогает услышать.
+      </h1>
 
-    <button class="start-btn">Создать персональный отчёт</button>
+      <button
+        class="start-btn"
+        onclick="window.location.href = 'input_data.html'"
+      >
+        Выполнить анализ
+      </button>
+    </main>
 
-    <footer>
-      Светолада © 2026<br />
-      Безопасность данных гарантирована.<br />
-      Разработано с заботой и светом.
+    <footer class="main-footer">
+      <a href="security.html">Безопасность</a>
+      <span>|</span>
+      <span>Проект создали Людмила и ИИ Copilot, 2026 г.</span>
     </footer>
   </body>
 </html>

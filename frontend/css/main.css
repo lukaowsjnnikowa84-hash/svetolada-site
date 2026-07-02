@@ -1,0 +1,98 @@
+/* Фон */
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../img/background.png") center/cover no-repeat;
+  z-index: -1;
+  opacity: 0.35;
+}
+
+/* Шапка */
+.main-header {
+  background: rgba(255, 255, 255, 0.85);
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo-block {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  height: 50px;
+  margin-right: 15px;
+}
+
+.logo-text {
+  font-size: 1.8em;
+  font-weight: 700;
+  color: #a67c00;
+}
+
+/* Меню */
+.main-menu a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #4a3b2f;
+  font-weight: 600;
+}
+
+.main-menu a:hover {
+  color: #a67c00;
+}
+
+/* Контент */
+.main-content {
+  text-align: center;
+  margin-top: 120px;
+}
+
+.slogan {
+  font-size: 1.6em;
+  color: #4a3b2f;
+  line-height: 1.5;
+  margin-bottom: 40px;
+}
+
+/* Кнопка */
+.start-btn {
+  padding: 15px 30px;
+  background: #d4af37;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2em;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(212, 175, 55, 0.4);
+}
+
+.start-btn:hover {
+  background: #b38b00;
+}
+
+/* Футер */
+.main-footer {
+  margin-top: 120px;
+  text-align: center;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.85);
+  font-size: 0.95em;
+  color: #4a3b2f;
+}
+
+.main-footer a {
+  color: #4a3b2f;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.main-footer a:hover {
+  color: #a67c00;
+}
