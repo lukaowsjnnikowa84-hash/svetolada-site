@@ -1,45 +1,47 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <title>Ваш отчёт готов</title>
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: url("../../generator/resources/background.png") center/cover
+    no-repeat;
+}
 
-    <link rel="stylesheet" href="../css/analysis_preview.css">
-</head>
+.preview-page {
+  width: 80%;
+  max-width: 700px;
+  margin: 80px auto;
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
 
-<body>
+.title {
+  font-size: 2em;
+  color: #a67c00;
+  margin-bottom: 20px;
+}
 
-<div class="preview-page">
+.intro {
+  font-size: 1.2em;
+  color: #4a3b2f;
+  margin-bottom: 40px;
+}
 
-    <h1 class="title">Ваш отчёт готов</h1>
+.buttons button {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 15px;
+  background: #d4af37;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1em;
+  cursor: pointer;
+}
 
-    <p class="intro">
-        Анализ успешно выполнен.<br>
-        Выберите формат отчёта, который хотите получить.
-    </p>
-
-    <div class="buttons">
-
-        <button onclick="window.location.href='analysis_result.html'">
-            Полный отчёт
-        </button>
-
-        <button onclick="window.location.href='analysis_sections.html'">
-            Отчёт по разделам
-        </button>
-
-        <button onclick="alert('PDF будет доступен позже')">
-            Скачать PDF
-        </button>
-
-        <button onclick="window.location.href='index.html'">
-            Вернуться на главную
-        </button>
-
-    </div>
-
-</div>
-
-</body>
-</html>
-
+.buttons button:hover {
+  background: #b38b00;
+}

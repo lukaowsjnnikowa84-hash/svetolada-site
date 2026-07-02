@@ -6,7 +6,7 @@ body {
     no-repeat;
 }
 
-.sections-page {
+.report-page {
   width: 80%;
   max-width: 800px;
   margin: 60px auto;
@@ -30,36 +30,18 @@ body {
   margin-bottom: 40px;
 }
 
-.sections-list {
-  list-style: none;
-  padding: 0;
+section {
+  margin-bottom: 40px;
 }
 
-.sections-list li {
-  padding: 12px;
+section h2 {
+  color: #a67c00;
   margin-bottom: 10px;
-  background: #f7e9c6;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 1.1em;
-}
-
-.sections-list li:hover {
-  background: #e6d29a;
-}
-
-.section-content {
-  margin-top: 30px;
-  padding: 20px;
-  background: #faf3e0;
-  border-radius: 8px;
-  min-height: 120px;
 }
 
 .buttons button {
   width: 100%;
   padding: 15px;
-  margin-top: 20px;
   background: #d4af37;
   color: white;
   border: none;
