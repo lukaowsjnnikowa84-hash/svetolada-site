@@ -22,8 +22,9 @@ body {
 }
 
 .logo-img {
-  height: 50px;
-  margin-right: 15px;
+  height: 120px;
+  margin: 0 auto;
+  display: block;
 }
 
 .logo-text {
@@ -40,8 +41,12 @@ body {
   font-weight: 600;
 }
 
-.main-menu a:hover {
-  color: #a67c00;
+.main-menu a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #4a3b2f;
+  font-weight: 600;
+  font-size: 1.2em; /* добавь размер */
 }
 
 /* Контент */
@@ -52,7 +57,8 @@ body {
 
 .slogan {
   font-size: 1.6em;
-  color: #4a3b2f;
+  color: #fff; /* белый текст */
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.6); /* мягкая тень для контраста */
   line-height: 1.5;
   margin-bottom: 40px;
 }
