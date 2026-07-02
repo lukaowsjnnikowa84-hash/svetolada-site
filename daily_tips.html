@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Советы на каждый день</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/daily_tips.css" />
+  </head>
+
+  <body>
+    <header class="main-header">
+      <div class="logo-block">
+        <img src="../../generator/resources/logo.png" class="logo-img" />
+        <div class="logo-text">Светолада</div>
+      </div>
+
+      <nav class="main-menu">
+        <a href="../../index.html">Главная</a>
+        <a href="about_analysis.html">Об анализе</a>
+        <a href="about_svetolada.html">О Светоладе</a>
+        <a href="daily_tips.html">Советы на каждый день</a>
+      </nav>
+    </header>
+
+    <main class="daily-tips-page">
+      <h1 class="page-title">Советы на каждый день</h1>
+
+      <!-- Главный совет дня -->
+      <section class="main-tip-block">
+        <h2>Совет дня</h2>
+        <p id="main-tip">Здесь будет отображаться главный совет дня.</p>
+
+        <button id="new-tip-btn">Хочу другой совет</button>
+      </section>
+
+      <!-- Мини-советы по категориям -->
+      <section class="categories-section">
+        <h2>Мини‑советы по категориям</h2>
+
+        <div class="category-block" id="cat-health">
+          <h3>Здоровье</h3>
+          <ul id="health-tips-list"></ul>
+        </div>
+
+        <div class="category-block" id="cat-emotions">
+          <h3>Эмоции</h3>
+          <ul id="emotion-tips-list"></ul>
+        </div>
+
+        <div class="category-block" id="cat-relationships">
+          <h3>Отношения</h3>
+          <ul id="relationship-tips-list"></ul>
+        </div>
+
+        <div class="category-block" id="cat-home">
+          <h3>Дом</h3>
+          <ul id="home-tips-list"></ul>
+        </div>
+
+        <div class="category-block" id="cat-work">
+          <h3>Работа</h3>
+          <ul id="work-tips-list"></ul>
+        </div>
+
+        <div class="category-block" id="cat-energy">
+          <h3>Энергия и настроение</h3>
+          <ul id="energy-tips-list"></ul>
+        </div>
+      </section>
+
+      <!-- Архив советов -->
+      <section class="archive-section">
+        <h2>Архив советов</h2>
+        <ul id="archive-list"></ul>
+      </section>
+    </main>
+
+    <footer class="main-footer">
+      <a href="security.html">Безопасность</a>
+      <span>|</span>
+      <span>Проект создали Людмила и ИИ Copilot, 2026 г.</span>
+    </footer>
+
+    <script src="../js/daily_tips.js"></script>
+  </body>
+</html>

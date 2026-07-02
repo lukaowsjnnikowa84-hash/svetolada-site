@@ -1,137 +1,82 @@
-// --- МАССИВЫ СОВЕТОВ ---
-
+// Главный совет дня
 const mainTips = [
-  "Сегодня лучше не спешить. Дай себе 10 минут тишины перед началом дел.",
-  "Сделай что-то маленькое, но приятное для себя — это изменит весь день.",
-  "Не перегружай себя. Одно важное дело — лучше, чем пять незавершённых.",
-  "Пей больше воды — мозг работает яснее.",
-  "Сделай короткую прогулку — даже 5 минут дадут энергию.",
-  "Не сравнивай себя с другими. Ты идёшь своим путём.",
-  "Сохрани спокойствие — оно твоя сила сегодня.",
-  "Сделай паузу перед важным разговором — она даст мудрость.",
-  "Улыбнись себе в зеркало — это работает.",
-  "Сегодня хорошо подходит для мягких решений, а не резких шагов.",
+  "Сделай сегодня хотя бы одно маленькое действие, которое приблизит тебя к спокойствию.",
+  "Поблагодари себя за то, что ты уже прошла. Ты сильнее, чем думаешь.",
+  "Сделай вдох глубже обычного — и выдох чуть медленнее. Это уже забота о себе.",
+  "Если что-то тревожит — запиши это. Записанное перестаёт давить.",
+  "Сделай сегодня что-то приятное для тела: тёплый чай, мягкий плед, прогулка.",
 ];
 
-const healthTips = [
-  "Выпей стакан тёплой воды утром.",
-  "Сделай лёгкую растяжку шеи.",
-  "Добавь один овощ в рацион.",
-  "Пройди хотя бы 500 шагов.",
-  "Сделай глубокий вдох 5 раз.",
-];
+// Мини‑советы по категориям
+const categories = {
+  health: [
+    "Выпей стакан чистой воды — тело скажет спасибо.",
+    "Сделай лёгкую растяжку шеи и плеч.",
+    "Погуляй 10 минут — это улучшит настроение.",
+  ],
+  emotions: [
+    "Разреши себе чувствовать то, что чувствуешь.",
+    "Скажи себе: «Я имею право на отдых».",
+    "Сделай паузу и спроси: «Что мне сейчас нужно?».",
+  ],
+  relationships: [
+    "Скажи тёплое слово тому, кто рядом.",
+    "Не спорь сегодня там, где можно улыбнуться.",
+    "Помни: мягкость — это сила.",
+  ],
+  home: [
+    "Убери одну маленькую вещь — порядок начнёт расти.",
+    "Зажги свечу или включи мягкий свет.",
+    "Проветри комнату — энергия обновится.",
+  ],
+  work: [
+    "Сделай сначала самое маленькое дело — и день пойдёт легче.",
+    "Сделай перерыв на 3 минуты — мозг перезагрузится.",
+    "Не требуй от себя идеальности — требуй движения.",
+  ],
+  energy: [
+    "Слушай музыку, которая поднимает настроение.",
+    "Сделай три глубоких вдоха.",
+    "Вспомни что-то хорошее из прошлого — это поднимет энергию.",
+  ],
+};
 
-const emotionTips = [
-  "Назови вслух своё чувство — оно станет легче.",
-  "Сделай паузу перед реакцией.",
-  "Обними себя за плечи — это успокаивает.",
-  "Слушай музыку, которая тебя поддерживает.",
-  "Запиши одну мысль, которая тревожит.",
-];
+// Архив
+const archiveList = document.getElementById("archive-list");
 
-const relationshipTips = [
-  "Скажи кому-то тёплое слово.",
-  "Не спорь сегодня — выбери мягкость.",
-  "Напомни близкому, что он важен.",
-  "Сделай маленький жест внимания.",
-  "Не принимай всё на свой счёт.",
-];
+// Вывод главного совета
+const mainTipEl = document.getElementById("main-tip");
+function showRandomMainTip() {
+  const tip = mainTips[Math.floor(Math.random() * mainTips.length)];
+  mainTipEl.textContent = tip;
 
-const homeTips = [
-  "Убери один маленький угол.",
-  "Зажги свечу — атмосфера меняет состояние.",
-  "Проветри комнату.",
-  "Сложи вещи на столе.",
-  "Добавь что-то красивое в пространство.",
-];
-
-const workTips = [
-  "Сделай одно дело полностью.",
-  "Поставь таймер на 20 минут.",
-  "Сделай перерыв каждые 90 минут.",
-  "Не бери на себя лишнее.",
-  "Сначала — самое простое действие.",
-];
-
-const energyTips = [
-  "Сделай три глубоких вдоха.",
-  "Посмотри на небо — это успокаивает.",
-  "Сменить позу — сменить состояние.",
-  "Сделай маленькую прогулку.",
-  "Поставь любимую музыку.",
-];
-
-// --- СОВЕТ ДНЯ ПО ДАТЕ ---
-
-function getTipOfTheDay() {
-  const today = new Date();
-  const index = today.getDate() % mainTips.length;
-  return mainTips[index];
+  // Добавляем в архив
+  const li = document.createElement("li");
+  li.textContent = `${new Date().toLocaleDateString()}: ${tip}`;
+  archiveList.prepend(li);
 }
 
-// --- ЗАПОЛНЕНИЕ КАТЕГОРИЙ ---
+// Кнопка «Хочу другой совет»
+document
+  .getElementById("new-tip-btn")
+  .addEventListener("click", showRandomMainTip);
 
-function fillCategory(listId, tipsArray) {
-  const ul = document.getElementById(listId);
-  ul.innerHTML = "";
-  tipsArray.forEach((tip) => {
+// Вывод мини‑советов
+function fillCategory(id, tips) {
+  const ul = document.getElementById(id);
+  tips.forEach((tip) => {
     const li = document.createElement("li");
     li.textContent = tip;
     ul.appendChild(li);
   });
 }
 
-// --- АРХИВ (localStorage) ---
+fillCategory("health-tips-list", categories.health);
+fillCategory("emotion-tips-list", categories.emotions);
+fillCategory("relationship-tips-list", categories.relationships);
+fillCategory("home-tips-list", categories.home);
+fillCategory("work-tips-list", categories.work);
+fillCategory("energy-tips-list", categories.energy);
 
-function saveTipToArchive(tip) {
-  const today = new Date().toLocaleDateString("ru-RU");
-  const archive = JSON.parse(localStorage.getItem("dailyTipsArchive") || "{}");
-
-  archive[today] = tip;
-  localStorage.setItem("dailyTipsArchive", JSON.stringify(archive));
-}
-
-function loadArchive() {
-  const archive = JSON.parse(localStorage.getItem("dailyTipsArchive") || "{}");
-  const ul = document.getElementById("archive-list");
-
-  ul.innerHTML = "";
-
-  Object.keys(archive).forEach((date) => {
-    const li = document.createElement("li");
-    li.textContent = `${date}: ${archive[date]}`;
-    ul.appendChild(li);
-  });
-}
-
-// --- КНОПКА "ХОЧУ ДРУГОЙ СОВЕТ" ---
-
-function setRandomTip() {
-  const randomIndex = Math.floor(Math.random() * mainTips.length);
-  const tip = mainTips[randomIndex];
-
-  document.getElementById("main-tip").textContent = tip;
-  saveTipToArchive(tip);
-  loadArchive();
-}
-
-// --- ИНИЦИАЛИЗАЦИЯ СТРАНИЦЫ ---
-
-document.addEventListener("DOMContentLoaded", () => {
-  const tip = getTipOfTheDay();
-  document.getElementById("main-tip").textContent = tip;
-  saveTipToArchive(tip);
-
-  fillCategory("health-tips-list", healthTips);
-  fillCategory("emotion-tips-list", emotionTips);
-  fillCategory("relationship-tips-list", relationshipTips);
-  fillCategory("home-tips-list", homeTips);
-  fillCategory("work-tips-list", workTips);
-  fillCategory("energy-tips-list", energyTips);
-
-  loadArchive();
-
-  document
-    .getElementById("new-tip-btn")
-    .addEventListener("click", setRandomTip);
-});
+// Показываем первый совет при загрузке
+showRandomMainTip();
